@@ -39,6 +39,8 @@ const resolve_backend_rep_t = root.lookupType("maxwell.protocol.resolve_backend_
 const resolve_backend_req_t = root.lookupType("maxwell.protocol.resolve_backend_req_t");
 const resolve_frontend_rep_t = root.lookupType("maxwell.protocol.resolve_frontend_rep_t");
 const resolve_frontend_req_t = root.lookupType("maxwell.protocol.resolve_frontend_req_t");
+const resolve_ip_rep_t = root.lookupType("maxwell.protocol.resolve_ip_rep_t");
+const resolve_ip_req_t = root.lookupType("maxwell.protocol.resolve_ip_req_t");
 const unwatch_rep_t = root.lookupType("maxwell.protocol.unwatch_rep_t");
 const unwatch_req_t = root.lookupType("maxwell.protocol.unwatch_req_t");
 const watch_rep_t = root.lookupType("maxwell.protocol.watch_rep_t");
@@ -155,6 +157,12 @@ function encode_msg(msg) {
     case resolve_frontend_req_t:
       writer.uint32(97);
       return resolve_frontend_req_t.encode(msg, writer).finish();
+    case resolve_ip_rep_t:
+      writer.uint32(122);
+      return resolve_ip_rep_t.encode(msg, writer).finish();
+    case resolve_ip_req_t:
+      writer.uint32(121);
+      return resolve_ip_req_t.encode(msg, writer).finish();
     case unwatch_rep_t:
       writer.uint32(108);
       return unwatch_rep_t.encode(msg, writer).finish();
@@ -248,6 +256,10 @@ function decode_msg(msg) {
       return resolve_frontend_rep_t.decode(reader);
     case 97:
       return resolve_frontend_req_t.decode(reader);
+    case 122:
+      return resolve_ip_rep_t.decode(reader);
+    case 121:
+      return resolve_ip_req_t.decode(reader);
     case 108:
       return unwatch_rep_t.decode(reader);
     case 107:
@@ -297,6 +309,8 @@ module.exports.resolve_backend_rep_t = resolve_backend_rep_t;
 module.exports.resolve_backend_req_t = resolve_backend_req_t;
 module.exports.resolve_frontend_rep_t = resolve_frontend_rep_t;
 module.exports.resolve_frontend_req_t = resolve_frontend_req_t;
+module.exports.resolve_ip_rep_t = resolve_ip_rep_t;
+module.exports.resolve_ip_req_t = resolve_ip_req_t;
 module.exports.unwatch_rep_t = unwatch_rep_t;
 module.exports.unwatch_req_t = unwatch_req_t;
 module.exports.watch_rep_t = watch_rep_t;

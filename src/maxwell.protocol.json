@@ -46,7 +46,9 @@
                 "WATCH_REQ": 105,
                 "WATCH_REP": 106,
                 "UNWATCH_REQ": 107,
-                "UNWATCH_REP": 108
+                "UNWATCH_REP": 108,
+                "RESOLVE_IP_REQ": 121,
+                "RESOLVE_IP_REP": 122
               }
             },
             "ping_req_t": {
@@ -78,6 +80,10 @@
                 "limit": {
                   "type": "uint32",
                   "id": 3
+                },
+                "puller": {
+                  "type": "uint32",
+                  "id": 4
                 },
                 "ref": {
                   "type": "uint32",
@@ -510,6 +516,26 @@
             "resolve_backend_rep_t": {
               "fields": {
                 "endpoint": {
+                  "type": "string",
+                  "id": 1
+                },
+                "ref": {
+                  "type": "uint32",
+                  "id": 15
+                }
+              }
+            },
+            "resolve_ip_req_t": {
+              "fields": {
+                "ref": {
+                  "type": "uint32",
+                  "id": 15
+                }
+              }
+            },
+            "resolve_ip_rep_t": {
+              "fields": {
+                "ip": {
                   "type": "string",
                   "id": 1
                 },
