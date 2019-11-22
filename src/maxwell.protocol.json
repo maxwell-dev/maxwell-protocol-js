@@ -584,7 +584,7 @@
                   "id": 2
                 },
                 "nodeId": {
-                  "type": "uint32",
+                  "type": "bytes",
                   "id": 3
                 }
               }
