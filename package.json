@@ -1,8 +1,9 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Maxwell protocol implementation for js/ts.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "author": "Chaoqian Xu <chaoranxu@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/maxwell-dev/maxwell-protocol-js",
