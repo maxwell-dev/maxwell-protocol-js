@@ -15,4 +15,5 @@ config.gypi
 yarn-error.log
 .idea
 *.iml
+coverage
 proto

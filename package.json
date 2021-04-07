@@ -1,17 +1,37 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.0.0",
-  "description": "Maxwell protocol implementation for js.",
-  "main": "index.js",
-  "repository": "https://github.com/maxwell-dev/maxwell-protocol-js",
+  "version": "1.0.1",
+  "description": "Maxwell protocol implementation for js/ts.",
+  "main": "lib/index.js",
   "author": "Chaoqian Xu <chaoranxu@gmail.com>",
   "license": "MIT",
+  "repository": "https://github.com/maxwell-dev/maxwell-protocol-js",
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "npm install && npm run gen",
+    "build": "npm install && npm run gen && npx tsc",
     "gen": "bin/maxwell_protocol_gen.sh",
-    "clean": "bin/maxwell_protocol_clean.sh"
+    "clean": "bin/maxwell_protocol_clean.sh",
+    "test": "npx jest --coverage",
+    "format": "npx prettier --write \"src/**/*.{js,ts}\" \"test/**/*.{js,ts}\" --ignore-path *.d.ts",
+    "lint": "npx eslint ./src --ext .js,.jsx,.ts,.tsx --ignore-pattern *.d.ts"
   },
   "dependencies": {
-    "protobufjs": "~6.8.8"
+    "protobufjs": "^6.10.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-typescript": "^7.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.3.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
   }
 }
