@@ -230,4 +230,4 @@ export function decode_msg(msg: ArrayBuffer): any {
   }
 }
 
-export default {msg_types, encode_msg, decode_msg};
+export default { msg_types, ...msg_types, encode_msg, decode_msg };

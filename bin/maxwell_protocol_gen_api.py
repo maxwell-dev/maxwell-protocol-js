@@ -88,7 +88,7 @@ def output(package_name, module_name, enum_pairs_dict):
     function_defs_output = "\n\n".join(function_defs)
 
     export_decls_output = \
-        f"""export default {{msg_types, encode_msg, decode_msg}};"""
+        f"""export default {{ msg_types, ...msg_types, encode_msg, decode_msg }};"""
 
     output = \
         f"""{import_decls_output}\n\n""" \
@@ -100,7 +100,8 @@ def output(package_name, module_name, enum_pairs_dict):
         output_file.write(output)
 
     require_export_decl_output = \
-        f"""export {{default, msg_types, encode_msg, decode_msg}} from "./{module_name}_ext";"""
+        f"""export {{ default }} from "./{module_name}_ext";\n""" \
+        f"""export * from "./{module_name}_ext";"""
     output_file_name = "src/index.ts"
     with open(output_file_name, "w") as output_file:
         output_file.write(require_export_decl_output)
