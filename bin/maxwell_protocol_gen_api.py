@@ -36,7 +36,8 @@ def output(package_name, module_name, enum_pairs_dict):
         f"""import * as root from "./{package_name.replace(".", "_")}";"""
 
     protocol_def_output = \
-        f"""export const msg_types = root.{package_name};"""
+        f"""export const msg_types = root.{package_name};\n""" \
+        f"""export const do_req_t = msg_types.do_req_t;"""
 
     function_names = []
     function_defs = []
@@ -88,7 +89,7 @@ def output(package_name, module_name, enum_pairs_dict):
     function_defs_output = "\n\n".join(function_defs)
 
     export_decls_output = \
-        f"""export default {{ msg_types, ...msg_types, encode_msg, decode_msg }};"""
+        f"""export default {{ msg_types, encode_msg, decode_msg }};"""
 
     output = \
         f"""{import_decls_output}\n\n""" \

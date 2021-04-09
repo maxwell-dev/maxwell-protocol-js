@@ -1,6 +1,6 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Maxwell protocol implementation for js/ts.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
