@@ -36,8 +36,7 @@ def output(package_name, module_name, enum_pairs_dict):
         f"""import * as root from "./{package_name.replace(".", "_")}";"""
 
     protocol_def_output = \
-        f"""export const msg_types = root.{package_name};\n""" \
-        f"""export const do_req_t = msg_types.do_req_t;"""
+        f"""export const msg_types = root.{package_name};"""
 
     function_names = []
     function_defs = []

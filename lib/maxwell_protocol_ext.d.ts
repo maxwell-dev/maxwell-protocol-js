@@ -1,6 +1,5 @@
 import * as root from "./maxwell_protocol";
 export declare const msg_types: typeof root.maxwell.protocol;
-export declare const do_req_t: typeof root.maxwell.protocol.do_req_t;
 export declare function encode_msg(msg: any): Uint8Array;
 export declare function decode_msg(msg: ArrayBuffer): any;
 declare const _default: {

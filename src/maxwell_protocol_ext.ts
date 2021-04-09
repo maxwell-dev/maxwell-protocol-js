@@ -2,7 +2,6 @@ import * as protobuf from "protobufjs/minimal";
 import * as root from "./maxwell_protocol";
 
 export const msg_types = root.maxwell.protocol;
-export const do_req_t = msg_types.do_req_t;
 
 export function encode_msg(msg: any): Uint8Array {
   const writer = new protobuf.Writer();
