@@ -31,12 +31,12 @@ def extract(content, enum_type_name):
 
 
 def output(package_name, module_name, enum_pairs_dict):
-    require_decls_output = \
+    import_decls_output = \
         f"""import * as protobuf from "protobufjs/minimal";\n""" \
         f"""import * as root from "./{package_name.replace(".", "_")}";"""
 
     protocol_def_output = \
-        f"""export const protocol = root.{package_name};"""
+        f"""export const msg_types = root.{package_name};"""
 
     function_names = []
     function_defs = []
@@ -48,13 +48,13 @@ def output(package_name, module_name, enum_pairs_dict):
                 continue
             msg_type_name = f"""{str.lower(enum_name)}_t"""
             case_decls0.append(
-                f"""    case protocol.{msg_type_name}:\n"""
+                f"""    case msg_types.{msg_type_name}:\n"""
                 f"""      writer.uint32({enum_value});\n"""
-                f"""      return protocol.{msg_type_name}.encode(msg, writer).finish();"""
+                f"""      return msg_types.{msg_type_name}.encode(msg, writer).finish();"""
             )
             case_decls1.append(
                 f"""    case {enum_value}:\n"""
-                f"""      return protocol.{msg_type_name}.decode(reader);"""
+                f"""      return msg_types.{msg_type_name}.decode(reader);"""
             )
         case_decls_output0 = "\n".join(case_decls0)
         case_decls_output1 = "\n".join(case_decls1)
@@ -87,16 +87,20 @@ def output(package_name, module_name, enum_pairs_dict):
         )
     function_defs_output = "\n\n".join(function_defs)
 
+    export_decls_output = \
+        f"""export default {{msg_types, encode_msg, decode_msg}};"""
+
     output = \
-        f"""{require_decls_output}\n\n""" \
+        f"""{import_decls_output}\n\n""" \
         f"""{protocol_def_output}\n\n""" \
-        f"""{function_defs_output}\n\n"""
+        f"""{function_defs_output}\n\n"""\
+        f"""{export_decls_output}"""
     output_file_name = f"""src/{module_name}_ext.ts"""
     with open(output_file_name, "w") as output_file:
         output_file.write(output)
 
     require_export_decl_output = \
-        f"""export * from "./{module_name}_ext";"""
+        f"""export {{default, msg_types, encode_msg, decode_msg}} from "./{module_name}_ext";"""
     output_file_name = "src/index.ts"
     with open(output_file_name, "w") as output_file:
         output_file.write(require_export_decl_output)

@@ -1,11 +1,7 @@
-import { protocol, encode_msg, decode_msg } from "../src/maxwell_protocol_ext";
+import protocol, { msg_types } from "../src";
 
 test("all", () => {
-  const pingReq = protocol.ping_req_t.create({ ref: 1 });
-  const pingReq2 = new protocol.ping_req_t({ ref: 1 });
-  expect(pingReq.ref).toStrictEqual(pingReq2.ref);
-
-  expect(encode_msg(pingReq)).toStrictEqual(encode_msg(pingReq2));
-  const decodedPingReq = decode_msg(encode_msg(pingReq));
+  const pingReq = new msg_types.ping_req_t({ ref: 1 });
+  const decodedPingReq = protocol.decode_msg(protocol.encode_msg(pingReq));
   expect(pingReq.ref).toStrictEqual(decodedPingReq.ref);
 });

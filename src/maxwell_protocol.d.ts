@@ -72,13 +72,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new ping_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ping_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iping_req_t): maxwell.protocol.ping_req_t;
-
-            /**
              * Encodes the specified ping_req_t message. Does not implicitly {@link maxwell.protocol.ping_req_t.verify|verify} messages.
              * @param message ping_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -115,13 +108,6 @@ export namespace maxwell {
 
             /** ping_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new ping_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ping_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iping_rep_t): maxwell.protocol.ping_rep_t;
 
             /**
              * Encodes the specified ping_rep_t message. Does not implicitly {@link maxwell.protocol.ping_rep_t.verify|verify} messages.
@@ -186,13 +172,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new pull_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns pull_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipull_req_t): maxwell.protocol.pull_req_t;
-
-            /**
              * Encodes the specified pull_req_t message. Does not implicitly {@link maxwell.protocol.pull_req_t.verify|verify} messages.
              * @param message pull_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -235,13 +214,6 @@ export namespace maxwell {
 
             /** pull_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new pull_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns pull_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipull_rep_t): maxwell.protocol.pull_rep_t;
 
             /**
              * Encodes the specified pull_rep_t message. Does not implicitly {@link maxwell.protocol.pull_rep_t.verify|verify} messages.
@@ -294,13 +266,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new push_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns push_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipush_req_t): maxwell.protocol.push_req_t;
-
-            /**
              * Encodes the specified push_req_t message. Does not implicitly {@link maxwell.protocol.push_req_t.verify|verify} messages.
              * @param message push_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -337,13 +302,6 @@ export namespace maxwell {
 
             /** push_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new push_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns push_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipush_rep_t): maxwell.protocol.push_rep_t;
 
             /**
              * Encodes the specified push_rep_t message. Does not implicitly {@link maxwell.protocol.push_rep_t.verify|verify} messages.
@@ -408,13 +366,6 @@ export namespace maxwell {
             public traces: maxwell.protocol.Itrace_t[];
 
             /**
-             * Creates a new do_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns do_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ido_req_t): maxwell.protocol.do_req_t;
-
-            /**
              * Encodes the specified do_req_t message. Does not implicitly {@link maxwell.protocol.do_req_t.verify|verify} messages.
              * @param message do_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -457,13 +408,6 @@ export namespace maxwell {
 
             /** do_rep_t traces. */
             public traces: maxwell.protocol.Itrace_t[];
-
-            /**
-             * Creates a new do_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns do_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ido_rep_t): maxwell.protocol.do_rep_t;
 
             /**
              * Encodes the specified do_rep_t message. Does not implicitly {@link maxwell.protocol.do_rep_t.verify|verify} messages.
@@ -522,13 +466,6 @@ export namespace maxwell {
             public traces: maxwell.protocol.Itrace_t[];
 
             /**
-             * Creates a new do2_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns do2_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ido2_req_t): maxwell.protocol.do2_req_t;
-
-            /**
              * Encodes the specified do2_req_t message. Does not implicitly {@link maxwell.protocol.do2_req_t.verify|verify} messages.
              * @param message do2_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -571,13 +508,6 @@ export namespace maxwell {
 
             /** do2_rep_t traces. */
             public traces: maxwell.protocol.Itrace_t[];
-
-            /**
-             * Creates a new do2_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns do2_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ido2_rep_t): maxwell.protocol.do2_rep_t;
 
             /**
              * Encodes the specified do2_rep_t message. Does not implicitly {@link maxwell.protocol.do2_rep_t.verify|verify} messages.
@@ -624,13 +554,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new auth_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns auth_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iauth_req_t): maxwell.protocol.auth_req_t;
-
-            /**
              * Encodes the specified auth_req_t message. Does not implicitly {@link maxwell.protocol.auth_req_t.verify|verify} messages.
              * @param message auth_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -669,13 +592,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new auth_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns auth_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iauth_rep_t): maxwell.protocol.auth_rep_t;
-
-            /**
              * Encodes the specified auth_rep_t message. Does not implicitly {@link maxwell.protocol.auth_rep_t.verify|verify} messages.
              * @param message auth_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -712,13 +628,6 @@ export namespace maxwell {
 
             /** ok_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new ok_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ok_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iok_rep_t): maxwell.protocol.ok_rep_t;
 
             /**
              * Encodes the specified ok_rep_t message. Does not implicitly {@link maxwell.protocol.ok_rep_t.verify|verify} messages.
@@ -771,13 +680,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new error_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns error_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ierror_rep_t): maxwell.protocol.error_rep_t;
-
-            /**
              * Encodes the specified error_rep_t message. Does not implicitly {@link maxwell.protocol.error_rep_t.verify|verify} messages.
              * @param message error_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -814,13 +716,6 @@ export namespace maxwell {
 
             /** ok2_rep_t traces. */
             public traces: maxwell.protocol.Itrace_t[];
-
-            /**
-             * Creates a new ok2_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ok2_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iok2_rep_t): maxwell.protocol.ok2_rep_t;
 
             /**
              * Encodes the specified ok2_rep_t message. Does not implicitly {@link maxwell.protocol.ok2_rep_t.verify|verify} messages.
@@ -873,13 +768,6 @@ export namespace maxwell {
             public traces: maxwell.protocol.Itrace_t[];
 
             /**
-             * Creates a new error2_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns error2_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ierror2_rep_t): maxwell.protocol.error2_rep_t;
-
-            /**
              * Encodes the specified error2_rep_t message. Does not implicitly {@link maxwell.protocol.error2_rep_t.verify|verify} messages.
              * @param message error2_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -924,13 +812,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new watch_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns watch_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iwatch_req_t): maxwell.protocol.watch_req_t;
-
-            /**
              * Encodes the specified watch_req_t message. Does not implicitly {@link maxwell.protocol.watch_req_t.verify|verify} messages.
              * @param message watch_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -967,13 +848,6 @@ export namespace maxwell {
 
             /** watch_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new watch_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns watch_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iwatch_rep_t): maxwell.protocol.watch_rep_t;
 
             /**
              * Encodes the specified watch_rep_t message. Does not implicitly {@link maxwell.protocol.watch_rep_t.verify|verify} messages.
@@ -1020,13 +894,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new unwatch_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns unwatch_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iunwatch_req_t): maxwell.protocol.unwatch_req_t;
-
-            /**
              * Encodes the specified unwatch_req_t message. Does not implicitly {@link maxwell.protocol.unwatch_req_t.verify|verify} messages.
              * @param message unwatch_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1063,13 +930,6 @@ export namespace maxwell {
 
             /** unwatch_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new unwatch_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns unwatch_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iunwatch_rep_t): maxwell.protocol.unwatch_rep_t;
 
             /**
              * Encodes the specified unwatch_rep_t message. Does not implicitly {@link maxwell.protocol.unwatch_rep_t.verify|verify} messages.
@@ -1116,13 +976,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new register_frontend_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns register_frontend_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iregister_frontend_req_t): maxwell.protocol.register_frontend_req_t;
-
-            /**
              * Encodes the specified register_frontend_req_t message. Does not implicitly {@link maxwell.protocol.register_frontend_req_t.verify|verify} messages.
              * @param message register_frontend_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1159,13 +1012,6 @@ export namespace maxwell {
 
             /** register_frontend_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new register_frontend_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns register_frontend_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iregister_frontend_rep_t): maxwell.protocol.register_frontend_rep_t;
 
             /**
              * Encodes the specified register_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.register_frontend_rep_t.verify|verify} messages.
@@ -1212,13 +1058,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new add_route_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns add_route_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iadd_route_req_t): maxwell.protocol.add_route_req_t;
-
-            /**
              * Encodes the specified add_route_req_t message. Does not implicitly {@link maxwell.protocol.add_route_req_t.verify|verify} messages.
              * @param message add_route_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1255,13 +1094,6 @@ export namespace maxwell {
 
             /** add_route_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new add_route_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns add_route_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iadd_route_rep_t): maxwell.protocol.add_route_rep_t;
 
             /**
              * Encodes the specified add_route_rep_t message. Does not implicitly {@link maxwell.protocol.add_route_rep_t.verify|verify} messages.
@@ -1308,13 +1140,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new delete_route_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns delete_route_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Idelete_route_req_t): maxwell.protocol.delete_route_req_t;
-
-            /**
              * Encodes the specified delete_route_req_t message. Does not implicitly {@link maxwell.protocol.delete_route_req_t.verify|verify} messages.
              * @param message delete_route_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1351,13 +1176,6 @@ export namespace maxwell {
 
             /** delete_route_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new delete_route_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns delete_route_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Idelete_route_rep_t): maxwell.protocol.delete_route_rep_t;
 
             /**
              * Encodes the specified delete_route_rep_t message. Does not implicitly {@link maxwell.protocol.delete_route_rep_t.verify|verify} messages.
@@ -1402,13 +1220,6 @@ export namespace maxwell {
 
             /** add_route_msg_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new add_route_msg_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns add_route_msg_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iadd_route_msg_t): maxwell.protocol.add_route_msg_t;
 
             /**
              * Encodes the specified add_route_msg_t message. Does not implicitly {@link maxwell.protocol.add_route_msg_t.verify|verify} messages.
@@ -1461,13 +1272,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new delete_route_msg_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns delete_route_msg_t instance
-             */
-            public static create(properties?: maxwell.protocol.Idelete_route_msg_t): maxwell.protocol.delete_route_msg_t;
-
-            /**
              * Encodes the specified delete_route_msg_t message. Does not implicitly {@link maxwell.protocol.delete_route_msg_t.verify|verify} messages.
              * @param message delete_route_msg_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1512,13 +1316,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new push_routes_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns push_routes_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipush_routes_req_t): maxwell.protocol.push_routes_req_t;
-
-            /**
              * Encodes the specified push_routes_req_t message. Does not implicitly {@link maxwell.protocol.push_routes_req_t.verify|verify} messages.
              * @param message push_routes_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1557,13 +1354,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new push_routes_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns push_routes_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipush_routes_rep_t): maxwell.protocol.push_routes_rep_t;
-
-            /**
              * Encodes the specified push_routes_rep_t message. Does not implicitly {@link maxwell.protocol.push_routes_rep_t.verify|verify} messages.
              * @param message push_routes_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1600,13 +1390,6 @@ export namespace maxwell {
 
             /** pull_routes_req_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new pull_routes_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns pull_routes_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipull_routes_req_t): maxwell.protocol.pull_routes_req_t;
 
             /**
              * Encodes the specified pull_routes_req_t message. Does not implicitly {@link maxwell.protocol.pull_routes_req_t.verify|verify} messages.
@@ -1653,13 +1436,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new pull_routes_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns pull_routes_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Ipull_routes_rep_t): maxwell.protocol.pull_routes_rep_t;
-
-            /**
              * Encodes the specified pull_routes_rep_t message. Does not implicitly {@link maxwell.protocol.pull_routes_rep_t.verify|verify} messages.
              * @param message pull_routes_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1704,13 +1480,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new delete_topics_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns delete_topics_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Idelete_topics_req_t): maxwell.protocol.delete_topics_req_t;
-
-            /**
              * Encodes the specified delete_topics_req_t message. Does not implicitly {@link maxwell.protocol.delete_topics_req_t.verify|verify} messages.
              * @param message delete_topics_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1747,13 +1516,6 @@ export namespace maxwell {
 
             /** delete_topics_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new delete_topics_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns delete_topics_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Idelete_topics_rep_t): maxwell.protocol.delete_topics_rep_t;
 
             /**
              * Encodes the specified delete_topics_rep_t message. Does not implicitly {@link maxwell.protocol.delete_topics_rep_t.verify|verify} messages.
@@ -1800,13 +1562,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new register_backend_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns register_backend_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iregister_backend_req_t): maxwell.protocol.register_backend_req_t;
-
-            /**
              * Encodes the specified register_backend_req_t message. Does not implicitly {@link maxwell.protocol.register_backend_req_t.verify|verify} messages.
              * @param message register_backend_req_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1845,13 +1600,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new register_backend_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns register_backend_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iregister_backend_rep_t): maxwell.protocol.register_backend_rep_t;
-
-            /**
              * Encodes the specified register_backend_rep_t message. Does not implicitly {@link maxwell.protocol.register_backend_rep_t.verify|verify} messages.
              * @param message register_backend_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1888,13 +1636,6 @@ export namespace maxwell {
 
             /** resolve_frontend_req_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new resolve_frontend_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_frontend_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_frontend_req_t): maxwell.protocol.resolve_frontend_req_t;
 
             /**
              * Encodes the specified resolve_frontend_req_t message. Does not implicitly {@link maxwell.protocol.resolve_frontend_req_t.verify|verify} messages.
@@ -1941,13 +1682,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new resolve_frontend_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_frontend_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_frontend_rep_t): maxwell.protocol.resolve_frontend_rep_t;
-
-            /**
              * Encodes the specified resolve_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.resolve_frontend_rep_t.verify|verify} messages.
              * @param message resolve_frontend_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -1990,13 +1724,6 @@ export namespace maxwell {
 
             /** resolve_backend_req_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new resolve_backend_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_backend_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_backend_req_t): maxwell.protocol.resolve_backend_req_t;
 
             /**
              * Encodes the specified resolve_backend_req_t message. Does not implicitly {@link maxwell.protocol.resolve_backend_req_t.verify|verify} messages.
@@ -2043,13 +1770,6 @@ export namespace maxwell {
             public ref: number;
 
             /**
-             * Creates a new resolve_backend_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_backend_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_backend_rep_t): maxwell.protocol.resolve_backend_rep_t;
-
-            /**
              * Encodes the specified resolve_backend_rep_t message. Does not implicitly {@link maxwell.protocol.resolve_backend_rep_t.verify|verify} messages.
              * @param message resolve_backend_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -2086,13 +1806,6 @@ export namespace maxwell {
 
             /** resolve_ip_req_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new resolve_ip_req_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_ip_req_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_ip_req_t): maxwell.protocol.resolve_ip_req_t;
 
             /**
              * Encodes the specified resolve_ip_req_t message. Does not implicitly {@link maxwell.protocol.resolve_ip_req_t.verify|verify} messages.
@@ -2137,13 +1850,6 @@ export namespace maxwell {
 
             /** resolve_ip_rep_t ref. */
             public ref: number;
-
-            /**
-             * Creates a new resolve_ip_rep_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns resolve_ip_rep_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iresolve_ip_rep_t): maxwell.protocol.resolve_ip_rep_t;
 
             /**
              * Encodes the specified resolve_ip_rep_t message. Does not implicitly {@link maxwell.protocol.resolve_ip_rep_t.verify|verify} messages.
@@ -2196,13 +1902,6 @@ export namespace maxwell {
             public timestamp: (number|Long);
 
             /**
-             * Creates a new msg_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns msg_t instance
-             */
-            public static create(properties?: maxwell.protocol.Imsg_t): maxwell.protocol.msg_t;
-
-            /**
              * Encodes the specified msg_t message. Does not implicitly {@link maxwell.protocol.msg_t.verify|verify} messages.
              * @param message msg_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -2245,13 +1944,6 @@ export namespace maxwell {
 
             /** source_t endpoint. */
             public endpoint: string;
-
-            /**
-             * Creates a new source_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns source_t instance
-             */
-            public static create(properties?: maxwell.protocol.Isource_t): maxwell.protocol.source_t;
 
             /**
              * Encodes the specified source_t message. Does not implicitly {@link maxwell.protocol.source_t.verify|verify} messages.
@@ -2304,13 +1996,6 @@ export namespace maxwell {
             public nodeId: Uint8Array;
 
             /**
-             * Creates a new trace_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns trace_t instance
-             */
-            public static create(properties?: maxwell.protocol.Itrace_t): maxwell.protocol.trace_t;
-
-            /**
              * Encodes the specified trace_t message. Does not implicitly {@link maxwell.protocol.trace_t.verify|verify} messages.
              * @param message trace_t message or plain object to encode
              * @param [writer] Writer to encode to
@@ -2353,13 +2038,6 @@ export namespace maxwell {
 
             /** route_group_t endpoints. */
             public endpoints: string[];
-
-            /**
-             * Creates a new route_group_t instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns route_group_t instance
-             */
-            public static create(properties?: maxwell.protocol.Iroute_group_t): maxwell.protocol.route_group_t;
 
             /**
              * Encodes the specified route_group_t message. Does not implicitly {@link maxwell.protocol.route_group_t.verify|verify} messages.

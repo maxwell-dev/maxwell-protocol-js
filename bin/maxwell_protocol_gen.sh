@@ -17,7 +17,7 @@ fi
 mkdir -p src lib
 
 ${root_dir}/node_modules/.bin/pbjs \
-    -t static-module -w es6 --no-verify --no-convert --no-delimited \
+    -t static-module -w es6 --es6 --no-create --no-verify --no-convert --no-delimited \
     -o src/maxwell_protocol.js \
     proto/maxwell_protocol.proto
 ${root_dir}/node_modules/.bin/pbts -o src/maxwell_protocol.d.ts src/maxwell_protocol.js
