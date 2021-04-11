@@ -135,7 +135,7 @@ export namespace maxwell {
             topic?: (string|null);
 
             /** pull_req_t offset */
-            offset?: (number|Long|null);
+            offset?: (number|null);
 
             /** pull_req_t limit */
             limit?: (number|null);
@@ -160,7 +160,7 @@ export namespace maxwell {
             public topic: string;
 
             /** pull_req_t offset. */
-            public offset: (number|Long);
+            public offset: number;
 
             /** pull_req_t limit. */
             public limit: number;
@@ -1874,13 +1874,13 @@ export namespace maxwell {
         interface Imsg_t {
 
             /** msg_t offset */
-            offset?: (number|Long|null);
+            offset?: (number|null);
 
             /** msg_t value */
             value?: (Uint8Array|null);
 
             /** msg_t timestamp */
-            timestamp?: (number|Long|null);
+            timestamp?: (number|null);
         }
 
         /** Represents a msg_t. */
@@ -1893,13 +1893,13 @@ export namespace maxwell {
             constructor(properties?: maxwell.protocol.Imsg_t);
 
             /** msg_t offset. */
-            public offset: (number|Long);
+            public offset: number;
 
             /** msg_t value. */
             public value: Uint8Array;
 
             /** msg_t timestamp. */
-            public timestamp: (number|Long);
+            public timestamp: number;
 
             /**
              * Encodes the specified msg_t message. Does not implicitly {@link maxwell.protocol.msg_t.verify|verify} messages.

@@ -290,7 +290,7 @@ export const maxwell = $root.maxwell = (() => {
              * @memberof maxwell.protocol
              * @interface Ipull_req_t
              * @property {string|null} [topic] pull_req_t topic
-             * @property {number|Long|null} [offset] pull_req_t offset
+             * @property {number|null} [offset] pull_req_t offset
              * @property {number|null} [limit] pull_req_t limit
              * @property {number|null} [puller] pull_req_t puller
              * @property {number|null} [ref] pull_req_t ref
@@ -321,7 +321,7 @@ export const maxwell = $root.maxwell = (() => {
 
             /**
              * pull_req_t offset.
-             * @member {number|Long} offset
+             * @member {number} offset
              * @memberof maxwell.protocol.pull_req_t
              * @instance
              */
@@ -4087,9 +4087,9 @@ export const maxwell = $root.maxwell = (() => {
              * Properties of a msg_t.
              * @memberof maxwell.protocol
              * @interface Imsg_t
-             * @property {number|Long|null} [offset] msg_t offset
+             * @property {number|null} [offset] msg_t offset
              * @property {Uint8Array|null} [value] msg_t value
-             * @property {number|Long|null} [timestamp] msg_t timestamp
+             * @property {number|null} [timestamp] msg_t timestamp
              */
 
             /**
@@ -4109,7 +4109,7 @@ export const maxwell = $root.maxwell = (() => {
 
             /**
              * msg_t offset.
-             * @member {number|Long} offset
+             * @member {number} offset
              * @memberof maxwell.protocol.msg_t
              * @instance
              */
@@ -4125,7 +4125,7 @@ export const maxwell = $root.maxwell = (() => {
 
             /**
              * msg_t timestamp.
-             * @member {number|Long} timestamp
+             * @member {number} timestamp
              * @memberof maxwell.protocol.msg_t
              * @instance
              */

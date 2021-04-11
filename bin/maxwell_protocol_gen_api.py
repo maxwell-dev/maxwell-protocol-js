@@ -100,6 +100,10 @@ def output(package_name, module_name, enum_pairs_dict):
         output_file.write(output)
 
     require_export_decl_output = \
+        f"""import * as protobuf from "protobufjs/minimal";\n\n""" \
+        f"""// @ts-expect-error Explicitly disable long.js support\n"""\
+        f"""protobuf.util.Long = undefined;\n"""\
+        f"""protobuf.configure();\n\n""" \
         f"""export {{ default }} from "./{module_name}_ext";\n""" \
         f"""export * from "./{module_name}_ext";"""
     output_file_name = "src/index.ts"
