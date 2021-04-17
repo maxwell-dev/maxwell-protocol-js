@@ -1,20 +1,22 @@
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
-import * as $protobuf from "protobufjs/minimal";
+"use strict";
+
+var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
-const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
 
 // Exported root namespace
-const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
+var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-export const maxwell = $root.maxwell = (() => {
+$root.maxwell = (function() {
 
     /**
      * Namespace maxwell.
      * @exports maxwell
      * @namespace
      */
-    const maxwell = {};
+    var maxwell = {};
 
     maxwell.protocol = (function() {
 
@@ -23,7 +25,7 @@ export const maxwell = $root.maxwell = (() => {
          * @memberof maxwell
          * @namespace
          */
-        const protocol = {};
+        var protocol = {};
 
         /**
          * msg_type_t enum.
@@ -74,7 +76,7 @@ export const maxwell = $root.maxwell = (() => {
          * @property {number} RESOLVE_IP_REP=122 RESOLVE_IP_REP value
          */
         protocol.msg_type_t = (function() {
-            const valuesById = {}, values = Object.create(valuesById);
+            var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "UNKNOWN"] = 0;
             values[valuesById[1] = "PING_REQ"] = 1;
             values[valuesById[2] = "PING_REP"] = 2;
@@ -140,7 +142,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function ping_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -184,9 +186,9 @@ export const maxwell = $root.maxwell = (() => {
             ping_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ping_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ping_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -221,7 +223,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function ping_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -265,9 +267,9 @@ export const maxwell = $root.maxwell = (() => {
             ping_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ping_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ping_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -306,7 +308,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function pull_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -390,9 +392,9 @@ export const maxwell = $root.maxwell = (() => {
             pull_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.topic = reader.string();
@@ -441,7 +443,7 @@ export const maxwell = $root.maxwell = (() => {
             function pull_rep_t(properties) {
                 this.msgs = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -475,7 +477,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.msgs != null && message.msgs.length)
-                    for (let i = 0; i < message.msgs.length; ++i)
+                    for (var i = 0; i < message.msgs.length; ++i)
                         $root.maxwell.protocol.msg_t.encode(message.msgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
@@ -496,9 +498,9 @@ export const maxwell = $root.maxwell = (() => {
             pull_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.msgs && message.msgs.length))
@@ -540,7 +542,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function push_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -604,9 +606,9 @@ export const maxwell = $root.maxwell = (() => {
             push_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.topic = reader.string();
@@ -647,7 +649,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function push_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -691,9 +693,9 @@ export const maxwell = $root.maxwell = (() => {
             push_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -733,7 +735,7 @@ export const maxwell = $root.maxwell = (() => {
             function do_req_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -799,7 +801,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.source != null && Object.hasOwnProperty.call(message, "source"))
                     $root.maxwell.protocol.source_t.encode(message.source, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -818,9 +820,9 @@ export const maxwell = $root.maxwell = (() => {
             do_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -871,7 +873,7 @@ export const maxwell = $root.maxwell = (() => {
             function do_rep_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -907,7 +909,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -926,9 +928,9 @@ export const maxwell = $root.maxwell = (() => {
             do_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.value = reader.string();
@@ -972,7 +974,7 @@ export const maxwell = $root.maxwell = (() => {
             function do2_req_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1028,7 +1030,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.source != null && Object.hasOwnProperty.call(message, "source"))
                     $root.maxwell.protocol.source_t.encode(message.source, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -1047,9 +1049,9 @@ export const maxwell = $root.maxwell = (() => {
             do2_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do2_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do2_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -1097,7 +1099,7 @@ export const maxwell = $root.maxwell = (() => {
             function do2_rep_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1133,7 +1135,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.value);
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -1152,9 +1154,9 @@ export const maxwell = $root.maxwell = (() => {
             do2_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do2_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.do2_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.value = reader.bytes();
@@ -1195,7 +1197,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function auth_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1249,9 +1251,9 @@ export const maxwell = $root.maxwell = (() => {
             auth_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.auth_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.auth_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.token = reader.string();
@@ -1289,7 +1291,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function auth_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1333,9 +1335,9 @@ export const maxwell = $root.maxwell = (() => {
             auth_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.auth_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.auth_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -1370,7 +1372,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function ok_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1414,9 +1416,9 @@ export const maxwell = $root.maxwell = (() => {
             ok_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -1453,7 +1455,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function error_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1517,9 +1519,9 @@ export const maxwell = $root.maxwell = (() => {
             error_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.code = reader.int32();
@@ -1561,7 +1563,7 @@ export const maxwell = $root.maxwell = (() => {
             function ok2_rep_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1587,7 +1589,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -1606,9 +1608,9 @@ export const maxwell = $root.maxwell = (() => {
             ok2_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok2_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok2_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         if (!(message.traces && message.traces.length))
@@ -1648,7 +1650,7 @@ export const maxwell = $root.maxwell = (() => {
             function error2_rep_t(properties) {
                 this.traces = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1694,7 +1696,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.desc != null && Object.hasOwnProperty.call(message, "desc"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.desc);
                 if (message.traces != null && message.traces.length)
-                    for (let i = 0; i < message.traces.length; ++i)
+                    for (var i = 0; i < message.traces.length; ++i)
                         $root.maxwell.protocol.trace_t.encode(message.traces[i], writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -1713,9 +1715,9 @@ export const maxwell = $root.maxwell = (() => {
             error2_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error2_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error2_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.code = reader.int32();
@@ -1759,7 +1761,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function watch_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1813,9 +1815,9 @@ export const maxwell = $root.maxwell = (() => {
             watch_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.watch_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.watch_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -1853,7 +1855,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function watch_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1897,9 +1899,9 @@ export const maxwell = $root.maxwell = (() => {
             watch_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.watch_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.watch_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -1935,7 +1937,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function unwatch_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -1989,9 +1991,9 @@ export const maxwell = $root.maxwell = (() => {
             unwatch_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.unwatch_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.unwatch_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -2029,7 +2031,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function unwatch_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2073,9 +2075,9 @@ export const maxwell = $root.maxwell = (() => {
             unwatch_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.unwatch_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.unwatch_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -2111,7 +2113,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function register_frontend_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2165,9 +2167,9 @@ export const maxwell = $root.maxwell = (() => {
             register_frontend_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_frontend_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_frontend_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.endpoint = reader.string();
@@ -2205,7 +2207,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function register_frontend_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2249,9 +2251,9 @@ export const maxwell = $root.maxwell = (() => {
             register_frontend_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_frontend_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_frontend_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -2287,7 +2289,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function add_route_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2341,9 +2343,9 @@ export const maxwell = $root.maxwell = (() => {
             add_route_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -2381,7 +2383,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function add_route_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2425,9 +2427,9 @@ export const maxwell = $root.maxwell = (() => {
             add_route_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -2463,7 +2465,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function delete_route_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2517,9 +2519,9 @@ export const maxwell = $root.maxwell = (() => {
             delete_route_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -2557,7 +2559,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function delete_route_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2601,9 +2603,9 @@ export const maxwell = $root.maxwell = (() => {
             delete_route_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -2639,7 +2641,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function add_route_msg_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2693,9 +2695,9 @@ export const maxwell = $root.maxwell = (() => {
             add_route_msg_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_msg_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_route_msg_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.endpoint = reader.string();
@@ -2735,7 +2737,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function delete_route_msg_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2799,9 +2801,9 @@ export const maxwell = $root.maxwell = (() => {
             delete_route_msg_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_msg_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_route_msg_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -2844,7 +2846,7 @@ export const maxwell = $root.maxwell = (() => {
             function push_routes_req_t(properties) {
                 this.types = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2878,7 +2880,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.types != null && message.types.length)
-                    for (let i = 0; i < message.types.length; ++i)
+                    for (var i = 0; i < message.types.length; ++i)
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.types[i]);
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
@@ -2899,9 +2901,9 @@ export const maxwell = $root.maxwell = (() => {
             push_routes_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_routes_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_routes_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.types && message.types.length))
@@ -2941,7 +2943,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function push_routes_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -2985,9 +2987,9 @@ export const maxwell = $root.maxwell = (() => {
             push_routes_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_routes_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.push_routes_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -3022,7 +3024,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function pull_routes_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3066,9 +3068,9 @@ export const maxwell = $root.maxwell = (() => {
             pull_routes_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_routes_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_routes_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -3105,7 +3107,7 @@ export const maxwell = $root.maxwell = (() => {
             function pull_routes_rep_t(properties) {
                 this.routeGroups = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3139,7 +3141,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.routeGroups != null && message.routeGroups.length)
-                    for (let i = 0; i < message.routeGroups.length; ++i)
+                    for (var i = 0; i < message.routeGroups.length; ++i)
                         $root.maxwell.protocol.route_group_t.encode(message.routeGroups[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
@@ -3160,9 +3162,9 @@ export const maxwell = $root.maxwell = (() => {
             pull_routes_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_routes_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pull_routes_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.routeGroups && message.routeGroups.length))
@@ -3204,7 +3206,7 @@ export const maxwell = $root.maxwell = (() => {
             function delete_topics_req_t(properties) {
                 this.topics = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3238,7 +3240,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.topics != null && message.topics.length)
-                    for (let i = 0; i < message.topics.length; ++i)
+                    for (var i = 0; i < message.topics.length; ++i)
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.topics[i]);
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
@@ -3259,9 +3261,9 @@ export const maxwell = $root.maxwell = (() => {
             delete_topics_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_topics_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_topics_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.topics && message.topics.length))
@@ -3301,7 +3303,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function delete_topics_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3345,9 +3347,9 @@ export const maxwell = $root.maxwell = (() => {
             delete_topics_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_topics_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_topics_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -3383,7 +3385,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function register_backend_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3437,9 +3439,9 @@ export const maxwell = $root.maxwell = (() => {
             register_backend_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_backend_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_backend_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.endpoint = reader.string();
@@ -3477,7 +3479,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function register_backend_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3521,9 +3523,9 @@ export const maxwell = $root.maxwell = (() => {
             register_backend_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_backend_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_backend_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -3558,7 +3560,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_frontend_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3602,9 +3604,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_frontend_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_frontend_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_frontend_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -3640,7 +3642,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_frontend_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3694,9 +3696,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_frontend_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_frontend_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_frontend_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.endpoint = reader.string();
@@ -3735,7 +3737,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_backend_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3789,9 +3791,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_backend_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_backend_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_backend_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.topic = reader.string();
@@ -3830,7 +3832,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_backend_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3884,9 +3886,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_backend_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_backend_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_backend_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.endpoint = reader.string();
@@ -3924,7 +3926,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_ip_req_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -3968,9 +3970,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_ip_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_ip_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_ip_req_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 15:
                         message.ref = reader.uint32();
@@ -4006,7 +4008,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function resolve_ip_rep_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -4060,9 +4062,9 @@ export const maxwell = $root.maxwell = (() => {
             resolve_ip_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_ip_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.resolve_ip_rep_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.ip = reader.string();
@@ -4102,7 +4104,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function msg_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -4166,9 +4168,9 @@ export const maxwell = $root.maxwell = (() => {
             msg_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.msg_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.msg_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.offset = reader.uint64();
@@ -4210,7 +4212,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function source_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -4264,9 +4266,9 @@ export const maxwell = $root.maxwell = (() => {
             source_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.source_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.source_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.agent = reader.string();
@@ -4306,7 +4308,7 @@ export const maxwell = $root.maxwell = (() => {
              */
             function trace_t(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -4370,9 +4372,9 @@ export const maxwell = $root.maxwell = (() => {
             trace_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.trace_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.trace_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.ref = reader.uint32();
@@ -4415,7 +4417,7 @@ export const maxwell = $root.maxwell = (() => {
             function route_group_t(properties) {
                 this.endpoints = [];
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -4451,7 +4453,7 @@ export const maxwell = $root.maxwell = (() => {
                 if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
                 if (message.endpoints != null && message.endpoints.length)
-                    for (let i = 0; i < message.endpoints.length; ++i)
+                    for (var i = 0; i < message.endpoints.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.endpoints[i]);
                 return writer;
             };
@@ -4470,9 +4472,9 @@ export const maxwell = $root.maxwell = (() => {
             route_group_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.route_group_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.route_group_t();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.type = reader.string();
@@ -4499,4 +4501,4 @@ export const maxwell = $root.maxwell = (() => {
     return maxwell;
 })();
 
-export { $root as default };
+module.exports = $root;

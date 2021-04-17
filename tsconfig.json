@@ -1,8 +1,10 @@
 {
     "compilerOptions": {
-        "module": "ES6",
-        "target": "ES6",
+        "module": "CommonJS",
+        "target": "ES2015",
         "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "strict": true,
         "allowJs": false,
         "removeComments": false,
@@ -11,5 +13,5 @@
         "outDir": "lib"
     },
     "include": ["src/**/*"],
-    "exclude": ["src/maxwell_protocol.d.ts", "node_modules"]
+    "exclude": ["node_modules", "src/maxwell_protocol.d.ts"]
 }

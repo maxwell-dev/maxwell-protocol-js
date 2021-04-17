@@ -12,7 +12,11 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
-  ignorePatterns: ["src/maxwell_protocol.d.ts"],
+  ignorePatterns: [
+    "lib",
+    "src/maxwell_protocol.d.ts",
+    "src/maxwell_protocol.js",
+  ],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
