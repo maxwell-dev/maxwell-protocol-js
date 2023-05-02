@@ -1,6 +1,6 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Maxwell protocol implementation for js/ts.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,7 +20,6 @@
     "lint": "npx eslint ./src --ext .js,.jsx,.ts,.tsx --ignore-pattern *.d.ts"
   },
   "dependencies": {
-    "@binsee/protobufjs-cli": "1.0.2",
     "protobufjs": "7.2.3"
   },
   "devDependencies": {
@@ -28,6 +27,7 @@
     "@babel/preset-typescript": "7.21.5",
     "@typescript-eslint/eslint-plugin": "5.59.2",
     "@typescript-eslint/parser": "5.59.2",
+    "@binsee/protobufjs-cli": "1.0.2",
     "babel-jest": "29.5.0",
     "bufferutil": "4.0.7",
     "canvas": "2.11.2",
