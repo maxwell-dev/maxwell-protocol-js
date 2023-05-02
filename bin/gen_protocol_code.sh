@@ -5,7 +5,7 @@ cd ${current_dir}
 
 # Fetch proto files
 if [[ ! -d proto ]]; then
-    git clone https://github.com/maxwell-dev/maxwell-protocol proto;
+    git clone -b dev https://github.com/maxwell-dev/maxwell-protocol proto;
 fi
 
 # Generate pb files
@@ -24,6 +24,6 @@ ${root_dir}/node_modules/.bin/pbts -o src/maxwell_protocol.d.ts src/maxwell_prot
 cp -f src/maxwell_protocol.* lib/
 
 # Generate api files
-bin/maxwell_protocol_gen_api.py \
+bin/gen_protocol_ext.py \
     --proto_file proto/maxwell_protocol.proto \
     --enum_type_names msg_type_t
