@@ -11,35 +11,34 @@ export namespace maxwell {
             UNKNOWN = 0,
             PING_REQ = 1,
             PING_REP = 2,
-            PUSH_REQ = 3,
-            PUSH_REP = 4,
-            PULL_REQ = 5,
-            PULL_REP = 6,
-            REQ_REQ = 7,
-            REQ_REP = 8,
-            AUTH_REQ = 27,
-            AUTH_REP = 28,
             OK_REP = 29,
             ERROR_REP = 30,
             OK2_REP = 31,
             ERROR2_REP = 32,
+            PUSH_REQ = 33,
+            PUSH_REP = 34,
+            PULL_REQ = 35,
+            PULL_REP = 36,
+            REQ_REQ = 39,
+            REQ_REP = 40,
+            AUTH_REQ = 41,
+            AUTH_REP = 42,
             REGISTER_FRONTEND_REQ = 65,
             REGISTER_FRONTEND_REP = 66,
             REGISTER_BACKEND_REQ = 67,
             REGISTER_BACKEND_REP = 68,
-            REGISTER_SERVER_REQ = 69,
-            REGISTER_SERVER_REP = 70,
-            ADD_ROUTES_REQ = 91,
-            ADD_ROUTES_REP = 92,
-            GET_ROUTES_REQ = 95,
-            GET_ROUTES_REP = 96,
-            ROUTE_ADDED_MSG = 100,
-            ROUTE_DELETED_MSG = 101,
-            ROUTE_HEALTH_CHANGED_MSG = 102,
-            ASSIGN_FRONTEND_REQ = 111,
-            ASSIGN_FRONTEND_REP = 112,
-            LOCATE_TOPIC_REQ = 113,
-            LOCATE_TOPIC_REP = 114,
+            REGISTER_SERVICE_REQ = 69,
+            REGISTER_SERVICE_REP = 70,
+            SET_ROUTES_REQ = 71,
+            SET_ROUTES_REP = 72,
+            GET_ROUTES_REQ = 75,
+            GET_ROUTES_REP = 76,
+            PICK_FRONTEND_REQ = 81,
+            PICK_FRONTEND_REP = 82,
+            PICK_FRONTENDS_REQ = 83,
+            PICK_FRONTENDS_REP = 84,
+            LOCATE_TOPIC_REQ = 85,
+            LOCATE_TOPIC_REP = 86,
             RESOLVE_IP_REQ = 121,
             RESOLVE_IP_REP = 122
         }
@@ -128,6 +127,234 @@ export namespace maxwell {
 
             /**
              * Gets the default type url for ping_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an ok_rep_t. */
+        interface Iok_rep_t {
+
+            /** ok_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents an ok_rep_t. */
+        class ok_rep_t implements Iok_rep_t {
+
+            /**
+             * Constructs a new ok_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iok_rep_t);
+
+            /** ok_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified ok_rep_t message. Does not implicitly {@link maxwell.protocol.ok_rep_t.verify|verify} messages.
+             * @param message ok_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iok_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ok_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ok_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.ok_rep_t;
+
+            /**
+             * Gets the default type url for ok_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an error_rep_t. */
+        interface Ierror_rep_t {
+
+            /** error_rep_t code */
+            code?: (number|null);
+
+            /** error_rep_t desc */
+            desc?: (string|null);
+
+            /** error_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents an error_rep_t. */
+        class error_rep_t implements Ierror_rep_t {
+
+            /**
+             * Constructs a new error_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Ierror_rep_t);
+
+            /** error_rep_t code. */
+            public code: number;
+
+            /** error_rep_t desc. */
+            public desc: string;
+
+            /** error_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified error_rep_t message. Does not implicitly {@link maxwell.protocol.error_rep_t.verify|verify} messages.
+             * @param message error_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Ierror_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an error_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns error_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.error_rep_t;
+
+            /**
+             * Gets the default type url for error_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an ok2_rep_t. */
+        interface Iok2_rep_t {
+
+            /** ok2_rep_t conn0Ref */
+            conn0Ref?: (number|null);
+
+            /** ok2_rep_t conn1Ref */
+            conn1Ref?: (number|null);
+
+            /** ok2_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents an ok2_rep_t. */
+        class ok2_rep_t implements Iok2_rep_t {
+
+            /**
+             * Constructs a new ok2_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iok2_rep_t);
+
+            /** ok2_rep_t conn0Ref. */
+            public conn0Ref: number;
+
+            /** ok2_rep_t conn1Ref. */
+            public conn1Ref: number;
+
+            /** ok2_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified ok2_rep_t message. Does not implicitly {@link maxwell.protocol.ok2_rep_t.verify|verify} messages.
+             * @param message ok2_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iok2_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ok2_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ok2_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.ok2_rep_t;
+
+            /**
+             * Gets the default type url for ok2_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of an error2_rep_t. */
+        interface Ierror2_rep_t {
+
+            /** error2_rep_t code */
+            code?: (number|null);
+
+            /** error2_rep_t desc */
+            desc?: (string|null);
+
+            /** error2_rep_t conn0Ref */
+            conn0Ref?: (number|null);
+
+            /** error2_rep_t conn1Ref */
+            conn1Ref?: (number|null);
+
+            /** error2_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents an error2_rep_t. */
+        class error2_rep_t implements Ierror2_rep_t {
+
+            /**
+             * Constructs a new error2_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Ierror2_rep_t);
+
+            /** error2_rep_t code. */
+            public code: number;
+
+            /** error2_rep_t desc. */
+            public desc: string;
+
+            /** error2_rep_t conn0Ref. */
+            public conn0Ref: number;
+
+            /** error2_rep_t conn1Ref. */
+            public conn1Ref: number;
+
+            /** error2_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified error2_rep_t message. Does not implicitly {@link maxwell.protocol.error2_rep_t.verify|verify} messages.
+             * @param message error2_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Ierror2_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an error2_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns error2_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.error2_rep_t;
+
+            /**
+             * Gets the default type url for error2_rep_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
@@ -632,245 +859,11 @@ export namespace maxwell {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an ok_rep_t. */
-        interface Iok_rep_t {
-
-            /** ok_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents an ok_rep_t. */
-        class ok_rep_t implements Iok_rep_t {
-
-            /**
-             * Constructs a new ok_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Iok_rep_t);
-
-            /** ok_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified ok_rep_t message. Does not implicitly {@link maxwell.protocol.ok_rep_t.verify|verify} messages.
-             * @param message ok_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Iok_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ok_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ok_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.ok_rep_t;
-
-            /**
-             * Gets the default type url for ok_rep_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of an error_rep_t. */
-        interface Ierror_rep_t {
-
-            /** error_rep_t code */
-            code?: (number|null);
-
-            /** error_rep_t desc */
-            desc?: (string|null);
-
-            /** error_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents an error_rep_t. */
-        class error_rep_t implements Ierror_rep_t {
-
-            /**
-             * Constructs a new error_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Ierror_rep_t);
-
-            /** error_rep_t code. */
-            public code: number;
-
-            /** error_rep_t desc. */
-            public desc: string;
-
-            /** error_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified error_rep_t message. Does not implicitly {@link maxwell.protocol.error_rep_t.verify|verify} messages.
-             * @param message error_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Ierror_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an error_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns error_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.error_rep_t;
-
-            /**
-             * Gets the default type url for error_rep_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of an ok2_rep_t. */
-        interface Iok2_rep_t {
-
-            /** ok2_rep_t conn0Ref */
-            conn0Ref?: (number|null);
-
-            /** ok2_rep_t conn1Ref */
-            conn1Ref?: (number|null);
-
-            /** ok2_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents an ok2_rep_t. */
-        class ok2_rep_t implements Iok2_rep_t {
-
-            /**
-             * Constructs a new ok2_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Iok2_rep_t);
-
-            /** ok2_rep_t conn0Ref. */
-            public conn0Ref: number;
-
-            /** ok2_rep_t conn1Ref. */
-            public conn1Ref: number;
-
-            /** ok2_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified ok2_rep_t message. Does not implicitly {@link maxwell.protocol.ok2_rep_t.verify|verify} messages.
-             * @param message ok2_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Iok2_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an ok2_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ok2_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.ok2_rep_t;
-
-            /**
-             * Gets the default type url for ok2_rep_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of an error2_rep_t. */
-        interface Ierror2_rep_t {
-
-            /** error2_rep_t code */
-            code?: (number|null);
-
-            /** error2_rep_t desc */
-            desc?: (string|null);
-
-            /** error2_rep_t conn0Ref */
-            conn0Ref?: (number|null);
-
-            /** error2_rep_t conn1Ref */
-            conn1Ref?: (number|null);
-
-            /** error2_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents an error2_rep_t. */
-        class error2_rep_t implements Ierror2_rep_t {
-
-            /**
-             * Constructs a new error2_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Ierror2_rep_t);
-
-            /** error2_rep_t code. */
-            public code: number;
-
-            /** error2_rep_t desc. */
-            public desc: string;
-
-            /** error2_rep_t conn0Ref. */
-            public conn0Ref: number;
-
-            /** error2_rep_t conn1Ref. */
-            public conn1Ref: number;
-
-            /** error2_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified error2_rep_t message. Does not implicitly {@link maxwell.protocol.error2_rep_t.verify|verify} messages.
-             * @param message error2_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Ierror2_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an error2_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns error2_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.error2_rep_t;
-
-            /**
-             * Gets the default type url for error2_rep_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
         /** Properties of a register_frontend_req_t. */
         interface Iregister_frontend_req_t {
 
             /** register_frontend_req_t httpPort */
             httpPort?: (number|null);
-
-            /** register_frontend_req_t httpsPort */
-            httpsPort?: (number|null);
-
-            /** register_frontend_req_t publicIp */
-            publicIp?: (string|null);
 
             /** register_frontend_req_t ref */
             ref?: (number|null);
@@ -887,12 +880,6 @@ export namespace maxwell {
 
             /** register_frontend_req_t httpPort. */
             public httpPort: number;
-
-            /** register_frontend_req_t httpsPort. */
-            public httpsPort: number;
-
-            /** register_frontend_req_t publicIp. */
-            public publicIp: string;
 
             /** register_frontend_req_t ref. */
             public ref: number;
@@ -1064,288 +1051,192 @@ export namespace maxwell {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a register_server_req_t. */
-        interface Iregister_server_req_t {
+        /** Properties of a register_service_req_t. */
+        interface Iregister_service_req_t {
 
-            /** register_server_req_t httpPort */
+            /** register_service_req_t httpPort */
             httpPort?: (number|null);
 
-            /** register_server_req_t ref */
+            /** register_service_req_t ref */
             ref?: (number|null);
         }
 
-        /** Represents a register_server_req_t. */
-        class register_server_req_t implements Iregister_server_req_t {
+        /** Represents a register_service_req_t. */
+        class register_service_req_t implements Iregister_service_req_t {
 
             /**
-             * Constructs a new register_server_req_t.
+             * Constructs a new register_service_req_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iregister_server_req_t);
+            constructor(properties?: maxwell.protocol.Iregister_service_req_t);
 
-            /** register_server_req_t httpPort. */
+            /** register_service_req_t httpPort. */
             public httpPort: number;
 
-            /** register_server_req_t ref. */
+            /** register_service_req_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified register_server_req_t message. Does not implicitly {@link maxwell.protocol.register_server_req_t.verify|verify} messages.
-             * @param message register_server_req_t message or plain object to encode
+             * Encodes the specified register_service_req_t message. Does not implicitly {@link maxwell.protocol.register_service_req_t.verify|verify} messages.
+             * @param message register_service_req_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iregister_server_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Iregister_service_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a register_server_req_t message from the specified reader or buffer.
+             * Decodes a register_service_req_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns register_server_req_t
+             * @returns register_service_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.register_server_req_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.register_service_req_t;
 
             /**
-             * Gets the default type url for register_server_req_t
+             * Gets the default type url for register_service_req_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a register_server_rep_t. */
-        interface Iregister_server_rep_t {
+        /** Properties of a register_service_rep_t. */
+        interface Iregister_service_rep_t {
 
-            /** register_server_rep_t ref */
+            /** register_service_rep_t ref */
             ref?: (number|null);
         }
 
-        /** Represents a register_server_rep_t. */
-        class register_server_rep_t implements Iregister_server_rep_t {
+        /** Represents a register_service_rep_t. */
+        class register_service_rep_t implements Iregister_service_rep_t {
 
             /**
-             * Constructs a new register_server_rep_t.
+             * Constructs a new register_service_rep_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iregister_server_rep_t);
+            constructor(properties?: maxwell.protocol.Iregister_service_rep_t);
 
-            /** register_server_rep_t ref. */
+            /** register_service_rep_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified register_server_rep_t message. Does not implicitly {@link maxwell.protocol.register_server_rep_t.verify|verify} messages.
-             * @param message register_server_rep_t message or plain object to encode
+             * Encodes the specified register_service_rep_t message. Does not implicitly {@link maxwell.protocol.register_service_rep_t.verify|verify} messages.
+             * @param message register_service_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iregister_server_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Iregister_service_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a register_server_rep_t message from the specified reader or buffer.
+             * Decodes a register_service_rep_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns register_server_rep_t
+             * @returns register_service_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.register_server_rep_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.register_service_rep_t;
 
             /**
-             * Gets the default type url for register_server_rep_t
+             * Gets the default type url for register_service_rep_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an add_routes_req_t. */
-        interface Iadd_routes_req_t {
+        /** Properties of a set_routes_req_t. */
+        interface Iset_routes_req_t {
 
-            /** add_routes_req_t paths */
+            /** set_routes_req_t paths */
             paths?: (string[]|null);
 
-            /** add_routes_req_t ref */
+            /** set_routes_req_t ref */
             ref?: (number|null);
         }
 
-        /** Represents an add_routes_req_t. */
-        class add_routes_req_t implements Iadd_routes_req_t {
+        /** Represents a set_routes_req_t. */
+        class set_routes_req_t implements Iset_routes_req_t {
 
             /**
-             * Constructs a new add_routes_req_t.
+             * Constructs a new set_routes_req_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iadd_routes_req_t);
+            constructor(properties?: maxwell.protocol.Iset_routes_req_t);
 
-            /** add_routes_req_t paths. */
+            /** set_routes_req_t paths. */
             public paths: string[];
 
-            /** add_routes_req_t ref. */
+            /** set_routes_req_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified add_routes_req_t message. Does not implicitly {@link maxwell.protocol.add_routes_req_t.verify|verify} messages.
-             * @param message add_routes_req_t message or plain object to encode
+             * Encodes the specified set_routes_req_t message. Does not implicitly {@link maxwell.protocol.set_routes_req_t.verify|verify} messages.
+             * @param message set_routes_req_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iadd_routes_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Iset_routes_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an add_routes_req_t message from the specified reader or buffer.
+             * Decodes a set_routes_req_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns add_routes_req_t
+             * @returns set_routes_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.add_routes_req_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.set_routes_req_t;
 
             /**
-             * Gets the default type url for add_routes_req_t
+             * Gets the default type url for set_routes_req_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an add_routes_rep_t. */
-        interface Iadd_routes_rep_t {
+        /** Properties of a set_routes_rep_t. */
+        interface Iset_routes_rep_t {
 
-            /** add_routes_rep_t ref */
+            /** set_routes_rep_t ref */
             ref?: (number|null);
         }
 
-        /** Represents an add_routes_rep_t. */
-        class add_routes_rep_t implements Iadd_routes_rep_t {
+        /** Represents a set_routes_rep_t. */
+        class set_routes_rep_t implements Iset_routes_rep_t {
 
             /**
-             * Constructs a new add_routes_rep_t.
+             * Constructs a new set_routes_rep_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iadd_routes_rep_t);
+            constructor(properties?: maxwell.protocol.Iset_routes_rep_t);
 
-            /** add_routes_rep_t ref. */
+            /** set_routes_rep_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified add_routes_rep_t message. Does not implicitly {@link maxwell.protocol.add_routes_rep_t.verify|verify} messages.
-             * @param message add_routes_rep_t message or plain object to encode
+             * Encodes the specified set_routes_rep_t message. Does not implicitly {@link maxwell.protocol.set_routes_rep_t.verify|verify} messages.
+             * @param message set_routes_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iadd_routes_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Iset_routes_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an add_routes_rep_t message from the specified reader or buffer.
+             * Decodes a set_routes_rep_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns add_routes_rep_t
+             * @returns set_routes_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.add_routes_rep_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.set_routes_rep_t;
 
             /**
-             * Gets the default type url for add_routes_rep_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of a delete_routes_req_t. */
-        interface Idelete_routes_req_t {
-
-            /** delete_routes_req_t paths */
-            paths?: (string[]|null);
-
-            /** delete_routes_req_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents a delete_routes_req_t. */
-        class delete_routes_req_t implements Idelete_routes_req_t {
-
-            /**
-             * Constructs a new delete_routes_req_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Idelete_routes_req_t);
-
-            /** delete_routes_req_t paths. */
-            public paths: string[];
-
-            /** delete_routes_req_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified delete_routes_req_t message. Does not implicitly {@link maxwell.protocol.delete_routes_req_t.verify|verify} messages.
-             * @param message delete_routes_req_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Idelete_routes_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a delete_routes_req_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns delete_routes_req_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.delete_routes_req_t;
-
-            /**
-             * Gets the default type url for delete_routes_req_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of a delete_routes_rep_t. */
-        interface Idelete_routes_rep_t {
-
-            /** delete_routes_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents a delete_routes_rep_t. */
-        class delete_routes_rep_t implements Idelete_routes_rep_t {
-
-            /**
-             * Constructs a new delete_routes_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Idelete_routes_rep_t);
-
-            /** delete_routes_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified delete_routes_rep_t message. Does not implicitly {@link maxwell.protocol.delete_routes_rep_t.verify|verify} messages.
-             * @param message delete_routes_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Idelete_routes_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a delete_routes_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns delete_routes_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.delete_routes_rep_t;
-
-            /**
-             * Gets the default type url for delete_routes_rep_t
+             * Gets the default type url for set_routes_rep_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
@@ -1448,273 +1339,192 @@ export namespace maxwell {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a route_added_msg_t. */
-        interface Iroute_added_msg_t {
+        /** Properties of a pick_frontend_req_t. */
+        interface Ipick_frontend_req_t {
 
-            /** route_added_msg_t path */
-            path?: (string|null);
-
-            /** route_added_msg_t endpoint */
-            endpoint?: (string|null);
-
-            /** route_added_msg_t ref */
+            /** pick_frontend_req_t ref */
             ref?: (number|null);
         }
 
-        /** Represents a route_added_msg_t. */
-        class route_added_msg_t implements Iroute_added_msg_t {
+        /** Represents a pick_frontend_req_t. */
+        class pick_frontend_req_t implements Ipick_frontend_req_t {
 
             /**
-             * Constructs a new route_added_msg_t.
+             * Constructs a new pick_frontend_req_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iroute_added_msg_t);
+            constructor(properties?: maxwell.protocol.Ipick_frontend_req_t);
 
-            /** route_added_msg_t path. */
-            public path: string;
-
-            /** route_added_msg_t endpoint. */
-            public endpoint: string;
-
-            /** route_added_msg_t ref. */
+            /** pick_frontend_req_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified route_added_msg_t message. Does not implicitly {@link maxwell.protocol.route_added_msg_t.verify|verify} messages.
-             * @param message route_added_msg_t message or plain object to encode
+             * Encodes the specified pick_frontend_req_t message. Does not implicitly {@link maxwell.protocol.pick_frontend_req_t.verify|verify} messages.
+             * @param message pick_frontend_req_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iroute_added_msg_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Ipick_frontend_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a route_added_msg_t message from the specified reader or buffer.
+             * Decodes a pick_frontend_req_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns route_added_msg_t
+             * @returns pick_frontend_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.route_added_msg_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.pick_frontend_req_t;
 
             /**
-             * Gets the default type url for route_added_msg_t
+             * Gets the default type url for pick_frontend_req_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a route_deleted_msg_t. */
-        interface Iroute_deleted_msg_t {
+        /** Properties of a pick_frontend_rep_t. */
+        interface Ipick_frontend_rep_t {
 
-            /** route_deleted_msg_t path */
-            path?: (string|null);
-
-            /** route_deleted_msg_t endpoint */
+            /** pick_frontend_rep_t endpoint */
             endpoint?: (string|null);
 
-            /** route_deleted_msg_t ref */
+            /** pick_frontend_rep_t ref */
             ref?: (number|null);
         }
 
-        /** Represents a route_deleted_msg_t. */
-        class route_deleted_msg_t implements Iroute_deleted_msg_t {
+        /** Represents a pick_frontend_rep_t. */
+        class pick_frontend_rep_t implements Ipick_frontend_rep_t {
 
             /**
-             * Constructs a new route_deleted_msg_t.
+             * Constructs a new pick_frontend_rep_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iroute_deleted_msg_t);
+            constructor(properties?: maxwell.protocol.Ipick_frontend_rep_t);
 
-            /** route_deleted_msg_t path. */
-            public path: string;
-
-            /** route_deleted_msg_t endpoint. */
+            /** pick_frontend_rep_t endpoint. */
             public endpoint: string;
 
-            /** route_deleted_msg_t ref. */
+            /** pick_frontend_rep_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified route_deleted_msg_t message. Does not implicitly {@link maxwell.protocol.route_deleted_msg_t.verify|verify} messages.
-             * @param message route_deleted_msg_t message or plain object to encode
+             * Encodes the specified pick_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.pick_frontend_rep_t.verify|verify} messages.
+             * @param message pick_frontend_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iroute_deleted_msg_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Ipick_frontend_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a route_deleted_msg_t message from the specified reader or buffer.
+             * Decodes a pick_frontend_rep_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns route_deleted_msg_t
+             * @returns pick_frontend_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.route_deleted_msg_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.pick_frontend_rep_t;
 
             /**
-             * Gets the default type url for route_deleted_msg_t
+             * Gets the default type url for pick_frontend_rep_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of a route_health_changed_msg_t. */
-        interface Iroute_health_changed_msg_t {
+        /** Properties of a pick_frontends_req_t. */
+        interface Ipick_frontends_req_t {
 
-            /** route_health_changed_msg_t path */
-            path?: (string|null);
-
-            /** route_health_changed_msg_t endpoint */
-            endpoint?: (string|null);
-
-            /** route_health_changed_msg_t isHealthy */
-            isHealthy?: (boolean|null);
-
-            /** route_health_changed_msg_t ref */
+            /** pick_frontends_req_t ref */
             ref?: (number|null);
         }
 
-        /** Represents a route_health_changed_msg_t. */
-        class route_health_changed_msg_t implements Iroute_health_changed_msg_t {
+        /** Represents a pick_frontends_req_t. */
+        class pick_frontends_req_t implements Ipick_frontends_req_t {
 
             /**
-             * Constructs a new route_health_changed_msg_t.
+             * Constructs a new pick_frontends_req_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iroute_health_changed_msg_t);
+            constructor(properties?: maxwell.protocol.Ipick_frontends_req_t);
 
-            /** route_health_changed_msg_t path. */
-            public path: string;
-
-            /** route_health_changed_msg_t endpoint. */
-            public endpoint: string;
-
-            /** route_health_changed_msg_t isHealthy. */
-            public isHealthy: boolean;
-
-            /** route_health_changed_msg_t ref. */
+            /** pick_frontends_req_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified route_health_changed_msg_t message. Does not implicitly {@link maxwell.protocol.route_health_changed_msg_t.verify|verify} messages.
-             * @param message route_health_changed_msg_t message or plain object to encode
+             * Encodes the specified pick_frontends_req_t message. Does not implicitly {@link maxwell.protocol.pick_frontends_req_t.verify|verify} messages.
+             * @param message pick_frontends_req_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iroute_health_changed_msg_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Ipick_frontends_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a route_health_changed_msg_t message from the specified reader or buffer.
+             * Decodes a pick_frontends_req_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns route_health_changed_msg_t
+             * @returns pick_frontends_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.route_health_changed_msg_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.pick_frontends_req_t;
 
             /**
-             * Gets the default type url for route_health_changed_msg_t
+             * Gets the default type url for pick_frontends_req_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
-        /** Properties of an assign_frontend_req_t. */
-        interface Iassign_frontend_req_t {
+        /** Properties of a pick_frontends_rep_t. */
+        interface Ipick_frontends_rep_t {
 
-            /** assign_frontend_req_t ref */
+            /** pick_frontends_rep_t endpoints */
+            endpoints?: (string[]|null);
+
+            /** pick_frontends_rep_t ref */
             ref?: (number|null);
         }
 
-        /** Represents an assign_frontend_req_t. */
-        class assign_frontend_req_t implements Iassign_frontend_req_t {
+        /** Represents a pick_frontends_rep_t. */
+        class pick_frontends_rep_t implements Ipick_frontends_rep_t {
 
             /**
-             * Constructs a new assign_frontend_req_t.
+             * Constructs a new pick_frontends_rep_t.
              * @param [properties] Properties to set
              */
-            constructor(properties?: maxwell.protocol.Iassign_frontend_req_t);
+            constructor(properties?: maxwell.protocol.Ipick_frontends_rep_t);
 
-            /** assign_frontend_req_t ref. */
+            /** pick_frontends_rep_t endpoints. */
+            public endpoints: string[];
+
+            /** pick_frontends_rep_t ref. */
             public ref: number;
 
             /**
-             * Encodes the specified assign_frontend_req_t message. Does not implicitly {@link maxwell.protocol.assign_frontend_req_t.verify|verify} messages.
-             * @param message assign_frontend_req_t message or plain object to encode
+             * Encodes the specified pick_frontends_rep_t message. Does not implicitly {@link maxwell.protocol.pick_frontends_rep_t.verify|verify} messages.
+             * @param message pick_frontends_rep_t message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: maxwell.protocol.Iassign_frontend_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: maxwell.protocol.Ipick_frontends_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an assign_frontend_req_t message from the specified reader or buffer.
+             * Decodes a pick_frontends_rep_t message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns assign_frontend_req_t
+             * @returns pick_frontends_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.assign_frontend_req_t;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.pick_frontends_rep_t;
 
             /**
-             * Gets the default type url for assign_frontend_req_t
-             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns The default type url
-             */
-            public static getTypeUrl(typeUrlPrefix?: string): string;
-        }
-
-        /** Properties of an assign_frontend_rep_t. */
-        interface Iassign_frontend_rep_t {
-
-            /** assign_frontend_rep_t endpoint */
-            endpoint?: (string|null);
-
-            /** assign_frontend_rep_t ref */
-            ref?: (number|null);
-        }
-
-        /** Represents an assign_frontend_rep_t. */
-        class assign_frontend_rep_t implements Iassign_frontend_rep_t {
-
-            /**
-             * Constructs a new assign_frontend_rep_t.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: maxwell.protocol.Iassign_frontend_rep_t);
-
-            /** assign_frontend_rep_t endpoint. */
-            public endpoint: string;
-
-            /** assign_frontend_rep_t ref. */
-            public ref: number;
-
-            /**
-             * Encodes the specified assign_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.assign_frontend_rep_t.verify|verify} messages.
-             * @param message assign_frontend_rep_t message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: maxwell.protocol.Iassign_frontend_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes an assign_frontend_rep_t message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns assign_frontend_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.assign_frontend_rep_t;
-
-            /**
-             * Gets the default type url for assign_frontend_rep_t
+             * Gets the default type url for pick_frontends_rep_t
              * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns The default type url
              */
@@ -1984,6 +1794,9 @@ export namespace maxwell {
 
             /** header_t endpoint */
             endpoint?: (string|null);
+
+            /** header_t token */
+            token?: (string|null);
         }
 
         /** Represents a header_t. */
@@ -2000,6 +1813,9 @@ export namespace maxwell {
 
             /** header_t endpoint. */
             public endpoint: string;
+
+            /** header_t token. */
+            public token: string;
 
             /**
              * Encodes the specified header_t message. Does not implicitly {@link maxwell.protocol.header_t.verify|verify} messages.

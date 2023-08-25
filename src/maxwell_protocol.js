@@ -34,35 +34,34 @@ $root.maxwell = (function() {
          * @property {number} UNKNOWN=0 UNKNOWN value
          * @property {number} PING_REQ=1 PING_REQ value
          * @property {number} PING_REP=2 PING_REP value
-         * @property {number} PUSH_REQ=3 PUSH_REQ value
-         * @property {number} PUSH_REP=4 PUSH_REP value
-         * @property {number} PULL_REQ=5 PULL_REQ value
-         * @property {number} PULL_REP=6 PULL_REP value
-         * @property {number} REQ_REQ=7 REQ_REQ value
-         * @property {number} REQ_REP=8 REQ_REP value
-         * @property {number} AUTH_REQ=27 AUTH_REQ value
-         * @property {number} AUTH_REP=28 AUTH_REP value
          * @property {number} OK_REP=29 OK_REP value
          * @property {number} ERROR_REP=30 ERROR_REP value
          * @property {number} OK2_REP=31 OK2_REP value
          * @property {number} ERROR2_REP=32 ERROR2_REP value
+         * @property {number} PUSH_REQ=33 PUSH_REQ value
+         * @property {number} PUSH_REP=34 PUSH_REP value
+         * @property {number} PULL_REQ=35 PULL_REQ value
+         * @property {number} PULL_REP=36 PULL_REP value
+         * @property {number} REQ_REQ=39 REQ_REQ value
+         * @property {number} REQ_REP=40 REQ_REP value
+         * @property {number} AUTH_REQ=41 AUTH_REQ value
+         * @property {number} AUTH_REP=42 AUTH_REP value
          * @property {number} REGISTER_FRONTEND_REQ=65 REGISTER_FRONTEND_REQ value
          * @property {number} REGISTER_FRONTEND_REP=66 REGISTER_FRONTEND_REP value
          * @property {number} REGISTER_BACKEND_REQ=67 REGISTER_BACKEND_REQ value
          * @property {number} REGISTER_BACKEND_REP=68 REGISTER_BACKEND_REP value
-         * @property {number} REGISTER_SERVER_REQ=69 REGISTER_SERVER_REQ value
-         * @property {number} REGISTER_SERVER_REP=70 REGISTER_SERVER_REP value
-         * @property {number} ADD_ROUTES_REQ=91 ADD_ROUTES_REQ value
-         * @property {number} ADD_ROUTES_REP=92 ADD_ROUTES_REP value
-         * @property {number} GET_ROUTES_REQ=95 GET_ROUTES_REQ value
-         * @property {number} GET_ROUTES_REP=96 GET_ROUTES_REP value
-         * @property {number} ROUTE_ADDED_MSG=100 ROUTE_ADDED_MSG value
-         * @property {number} ROUTE_DELETED_MSG=101 ROUTE_DELETED_MSG value
-         * @property {number} ROUTE_HEALTH_CHANGED_MSG=102 ROUTE_HEALTH_CHANGED_MSG value
-         * @property {number} ASSIGN_FRONTEND_REQ=111 ASSIGN_FRONTEND_REQ value
-         * @property {number} ASSIGN_FRONTEND_REP=112 ASSIGN_FRONTEND_REP value
-         * @property {number} LOCATE_TOPIC_REQ=113 LOCATE_TOPIC_REQ value
-         * @property {number} LOCATE_TOPIC_REP=114 LOCATE_TOPIC_REP value
+         * @property {number} REGISTER_SERVICE_REQ=69 REGISTER_SERVICE_REQ value
+         * @property {number} REGISTER_SERVICE_REP=70 REGISTER_SERVICE_REP value
+         * @property {number} SET_ROUTES_REQ=71 SET_ROUTES_REQ value
+         * @property {number} SET_ROUTES_REP=72 SET_ROUTES_REP value
+         * @property {number} GET_ROUTES_REQ=75 GET_ROUTES_REQ value
+         * @property {number} GET_ROUTES_REP=76 GET_ROUTES_REP value
+         * @property {number} PICK_FRONTEND_REQ=81 PICK_FRONTEND_REQ value
+         * @property {number} PICK_FRONTEND_REP=82 PICK_FRONTEND_REP value
+         * @property {number} PICK_FRONTENDS_REQ=83 PICK_FRONTENDS_REQ value
+         * @property {number} PICK_FRONTENDS_REP=84 PICK_FRONTENDS_REP value
+         * @property {number} LOCATE_TOPIC_REQ=85 LOCATE_TOPIC_REQ value
+         * @property {number} LOCATE_TOPIC_REP=86 LOCATE_TOPIC_REP value
          * @property {number} RESOLVE_IP_REQ=121 RESOLVE_IP_REQ value
          * @property {number} RESOLVE_IP_REP=122 RESOLVE_IP_REP value
          */
@@ -71,35 +70,34 @@ $root.maxwell = (function() {
             values[valuesById[0] = "UNKNOWN"] = 0;
             values[valuesById[1] = "PING_REQ"] = 1;
             values[valuesById[2] = "PING_REP"] = 2;
-            values[valuesById[3] = "PUSH_REQ"] = 3;
-            values[valuesById[4] = "PUSH_REP"] = 4;
-            values[valuesById[5] = "PULL_REQ"] = 5;
-            values[valuesById[6] = "PULL_REP"] = 6;
-            values[valuesById[7] = "REQ_REQ"] = 7;
-            values[valuesById[8] = "REQ_REP"] = 8;
-            values[valuesById[27] = "AUTH_REQ"] = 27;
-            values[valuesById[28] = "AUTH_REP"] = 28;
             values[valuesById[29] = "OK_REP"] = 29;
             values[valuesById[30] = "ERROR_REP"] = 30;
             values[valuesById[31] = "OK2_REP"] = 31;
             values[valuesById[32] = "ERROR2_REP"] = 32;
+            values[valuesById[33] = "PUSH_REQ"] = 33;
+            values[valuesById[34] = "PUSH_REP"] = 34;
+            values[valuesById[35] = "PULL_REQ"] = 35;
+            values[valuesById[36] = "PULL_REP"] = 36;
+            values[valuesById[39] = "REQ_REQ"] = 39;
+            values[valuesById[40] = "REQ_REP"] = 40;
+            values[valuesById[41] = "AUTH_REQ"] = 41;
+            values[valuesById[42] = "AUTH_REP"] = 42;
             values[valuesById[65] = "REGISTER_FRONTEND_REQ"] = 65;
             values[valuesById[66] = "REGISTER_FRONTEND_REP"] = 66;
             values[valuesById[67] = "REGISTER_BACKEND_REQ"] = 67;
             values[valuesById[68] = "REGISTER_BACKEND_REP"] = 68;
-            values[valuesById[69] = "REGISTER_SERVER_REQ"] = 69;
-            values[valuesById[70] = "REGISTER_SERVER_REP"] = 70;
-            values[valuesById[91] = "ADD_ROUTES_REQ"] = 91;
-            values[valuesById[92] = "ADD_ROUTES_REP"] = 92;
-            values[valuesById[95] = "GET_ROUTES_REQ"] = 95;
-            values[valuesById[96] = "GET_ROUTES_REP"] = 96;
-            values[valuesById[100] = "ROUTE_ADDED_MSG"] = 100;
-            values[valuesById[101] = "ROUTE_DELETED_MSG"] = 101;
-            values[valuesById[102] = "ROUTE_HEALTH_CHANGED_MSG"] = 102;
-            values[valuesById[111] = "ASSIGN_FRONTEND_REQ"] = 111;
-            values[valuesById[112] = "ASSIGN_FRONTEND_REP"] = 112;
-            values[valuesById[113] = "LOCATE_TOPIC_REQ"] = 113;
-            values[valuesById[114] = "LOCATE_TOPIC_REP"] = 114;
+            values[valuesById[69] = "REGISTER_SERVICE_REQ"] = 69;
+            values[valuesById[70] = "REGISTER_SERVICE_REP"] = 70;
+            values[valuesById[71] = "SET_ROUTES_REQ"] = 71;
+            values[valuesById[72] = "SET_ROUTES_REP"] = 72;
+            values[valuesById[75] = "GET_ROUTES_REQ"] = 75;
+            values[valuesById[76] = "GET_ROUTES_REP"] = 76;
+            values[valuesById[81] = "PICK_FRONTEND_REQ"] = 81;
+            values[valuesById[82] = "PICK_FRONTEND_REP"] = 82;
+            values[valuesById[83] = "PICK_FRONTENDS_REQ"] = 83;
+            values[valuesById[84] = "PICK_FRONTENDS_REP"] = 84;
+            values[valuesById[85] = "LOCATE_TOPIC_REQ"] = 85;
+            values[valuesById[86] = "LOCATE_TOPIC_REP"] = 86;
             values[valuesById[121] = "RESOLVE_IP_REQ"] = 121;
             values[valuesById[122] = "RESOLVE_IP_REP"] = 122;
             return values;
@@ -297,6 +295,514 @@ $root.maxwell = (function() {
             };
 
             return ping_rep_t;
+        })();
+
+        protocol.ok_rep_t = (function() {
+
+            /**
+             * Properties of an ok_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Iok_rep_t
+             * @property {number|null} [ref] ok_rep_t ref
+             */
+
+            /**
+             * Constructs a new ok_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents an ok_rep_t.
+             * @implements Iok_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Iok_rep_t=} [properties] Properties to set
+             */
+            function ok_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ok_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.ok_rep_t
+             * @instance
+             */
+            ok_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified ok_rep_t message. Does not implicitly {@link maxwell.protocol.ok_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.ok_rep_t
+             * @static
+             * @param {maxwell.protocol.Iok_rep_t} message ok_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ok_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes an ok_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.ok_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.ok_rep_t} ok_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ok_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for ok_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.ok_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ok_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.ok_rep_t";
+            };
+
+            return ok_rep_t;
+        })();
+
+        protocol.error_rep_t = (function() {
+
+            /**
+             * Properties of an error_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Ierror_rep_t
+             * @property {number|null} [code] error_rep_t code
+             * @property {string|null} [desc] error_rep_t desc
+             * @property {number|null} [ref] error_rep_t ref
+             */
+
+            /**
+             * Constructs a new error_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents an error_rep_t.
+             * @implements Ierror_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Ierror_rep_t=} [properties] Properties to set
+             */
+            function error_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * error_rep_t code.
+             * @member {number} code
+             * @memberof maxwell.protocol.error_rep_t
+             * @instance
+             */
+            error_rep_t.prototype.code = 0;
+
+            /**
+             * error_rep_t desc.
+             * @member {string} desc
+             * @memberof maxwell.protocol.error_rep_t
+             * @instance
+             */
+            error_rep_t.prototype.desc = "";
+
+            /**
+             * error_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.error_rep_t
+             * @instance
+             */
+            error_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified error_rep_t message. Does not implicitly {@link maxwell.protocol.error_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.error_rep_t
+             * @static
+             * @param {maxwell.protocol.Ierror_rep_t} message error_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            error_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
+                if (message.desc != null && Object.hasOwnProperty.call(message, "desc"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.desc);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes an error_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.error_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.error_rep_t} error_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            error_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.code = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.desc = reader.string();
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for error_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.error_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            error_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.error_rep_t";
+            };
+
+            return error_rep_t;
+        })();
+
+        protocol.ok2_rep_t = (function() {
+
+            /**
+             * Properties of an ok2_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Iok2_rep_t
+             * @property {number|null} [conn0Ref] ok2_rep_t conn0Ref
+             * @property {number|null} [conn1Ref] ok2_rep_t conn1Ref
+             * @property {number|null} [ref] ok2_rep_t ref
+             */
+
+            /**
+             * Constructs a new ok2_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents an ok2_rep_t.
+             * @implements Iok2_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Iok2_rep_t=} [properties] Properties to set
+             */
+            function ok2_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ok2_rep_t conn0Ref.
+             * @member {number} conn0Ref
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @instance
+             */
+            ok2_rep_t.prototype.conn0Ref = 0;
+
+            /**
+             * ok2_rep_t conn1Ref.
+             * @member {number} conn1Ref
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @instance
+             */
+            ok2_rep_t.prototype.conn1Ref = 0;
+
+            /**
+             * ok2_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @instance
+             */
+            ok2_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified ok2_rep_t message. Does not implicitly {@link maxwell.protocol.ok2_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @static
+             * @param {maxwell.protocol.Iok2_rep_t} message ok2_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ok2_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.conn0Ref != null && Object.hasOwnProperty.call(message, "conn0Ref"))
+                    writer.uint32(/* id 13, wireType 0 =*/104).uint32(message.conn0Ref);
+                if (message.conn1Ref != null && Object.hasOwnProperty.call(message, "conn1Ref"))
+                    writer.uint32(/* id 14, wireType 0 =*/112).uint32(message.conn1Ref);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes an ok2_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.ok2_rep_t} ok2_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ok2_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok2_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 13: {
+                            message.conn0Ref = reader.uint32();
+                            break;
+                        }
+                    case 14: {
+                            message.conn1Ref = reader.uint32();
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for ok2_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.ok2_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ok2_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.ok2_rep_t";
+            };
+
+            return ok2_rep_t;
+        })();
+
+        protocol.error2_rep_t = (function() {
+
+            /**
+             * Properties of an error2_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Ierror2_rep_t
+             * @property {number|null} [code] error2_rep_t code
+             * @property {string|null} [desc] error2_rep_t desc
+             * @property {number|null} [conn0Ref] error2_rep_t conn0Ref
+             * @property {number|null} [conn1Ref] error2_rep_t conn1Ref
+             * @property {number|null} [ref] error2_rep_t ref
+             */
+
+            /**
+             * Constructs a new error2_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents an error2_rep_t.
+             * @implements Ierror2_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Ierror2_rep_t=} [properties] Properties to set
+             */
+            function error2_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * error2_rep_t code.
+             * @member {number} code
+             * @memberof maxwell.protocol.error2_rep_t
+             * @instance
+             */
+            error2_rep_t.prototype.code = 0;
+
+            /**
+             * error2_rep_t desc.
+             * @member {string} desc
+             * @memberof maxwell.protocol.error2_rep_t
+             * @instance
+             */
+            error2_rep_t.prototype.desc = "";
+
+            /**
+             * error2_rep_t conn0Ref.
+             * @member {number} conn0Ref
+             * @memberof maxwell.protocol.error2_rep_t
+             * @instance
+             */
+            error2_rep_t.prototype.conn0Ref = 0;
+
+            /**
+             * error2_rep_t conn1Ref.
+             * @member {number} conn1Ref
+             * @memberof maxwell.protocol.error2_rep_t
+             * @instance
+             */
+            error2_rep_t.prototype.conn1Ref = 0;
+
+            /**
+             * error2_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.error2_rep_t
+             * @instance
+             */
+            error2_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified error2_rep_t message. Does not implicitly {@link maxwell.protocol.error2_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.error2_rep_t
+             * @static
+             * @param {maxwell.protocol.Ierror2_rep_t} message error2_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            error2_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
+                if (message.desc != null && Object.hasOwnProperty.call(message, "desc"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.desc);
+                if (message.conn0Ref != null && Object.hasOwnProperty.call(message, "conn0Ref"))
+                    writer.uint32(/* id 13, wireType 0 =*/104).uint32(message.conn0Ref);
+                if (message.conn1Ref != null && Object.hasOwnProperty.call(message, "conn1Ref"))
+                    writer.uint32(/* id 14, wireType 0 =*/112).uint32(message.conn1Ref);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes an error2_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.error2_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.error2_rep_t} error2_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            error2_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error2_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.code = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.desc = reader.string();
+                            break;
+                        }
+                    case 13: {
+                            message.conn0Ref = reader.uint32();
+                            break;
+                        }
+                    case 14: {
+                            message.conn1Ref = reader.uint32();
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for error2_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.error2_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            error2_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.error2_rep_t";
+            };
+
+            return error2_rep_t;
         })();
 
         protocol.push_req_t = (function() {
@@ -1424,514 +1930,6 @@ $root.maxwell = (function() {
             return auth_rep_t;
         })();
 
-        protocol.ok_rep_t = (function() {
-
-            /**
-             * Properties of an ok_rep_t.
-             * @memberof maxwell.protocol
-             * @interface Iok_rep_t
-             * @property {number|null} [ref] ok_rep_t ref
-             */
-
-            /**
-             * Constructs a new ok_rep_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents an ok_rep_t.
-             * @implements Iok_rep_t
-             * @constructor
-             * @param {maxwell.protocol.Iok_rep_t=} [properties] Properties to set
-             */
-            function ok_rep_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ok_rep_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.ok_rep_t
-             * @instance
-             */
-            ok_rep_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified ok_rep_t message. Does not implicitly {@link maxwell.protocol.ok_rep_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.ok_rep_t
-             * @static
-             * @param {maxwell.protocol.Iok_rep_t} message ok_rep_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ok_rep_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes an ok_rep_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.ok_rep_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.ok_rep_t} ok_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ok_rep_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok_rep_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for ok_rep_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.ok_rep_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            ok_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.ok_rep_t";
-            };
-
-            return ok_rep_t;
-        })();
-
-        protocol.error_rep_t = (function() {
-
-            /**
-             * Properties of an error_rep_t.
-             * @memberof maxwell.protocol
-             * @interface Ierror_rep_t
-             * @property {number|null} [code] error_rep_t code
-             * @property {string|null} [desc] error_rep_t desc
-             * @property {number|null} [ref] error_rep_t ref
-             */
-
-            /**
-             * Constructs a new error_rep_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents an error_rep_t.
-             * @implements Ierror_rep_t
-             * @constructor
-             * @param {maxwell.protocol.Ierror_rep_t=} [properties] Properties to set
-             */
-            function error_rep_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * error_rep_t code.
-             * @member {number} code
-             * @memberof maxwell.protocol.error_rep_t
-             * @instance
-             */
-            error_rep_t.prototype.code = 0;
-
-            /**
-             * error_rep_t desc.
-             * @member {string} desc
-             * @memberof maxwell.protocol.error_rep_t
-             * @instance
-             */
-            error_rep_t.prototype.desc = "";
-
-            /**
-             * error_rep_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.error_rep_t
-             * @instance
-             */
-            error_rep_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified error_rep_t message. Does not implicitly {@link maxwell.protocol.error_rep_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.error_rep_t
-             * @static
-             * @param {maxwell.protocol.Ierror_rep_t} message error_rep_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            error_rep_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
-                if (message.desc != null && Object.hasOwnProperty.call(message, "desc"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.desc);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes an error_rep_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.error_rep_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.error_rep_t} error_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            error_rep_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error_rep_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.code = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.desc = reader.string();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for error_rep_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.error_rep_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            error_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.error_rep_t";
-            };
-
-            return error_rep_t;
-        })();
-
-        protocol.ok2_rep_t = (function() {
-
-            /**
-             * Properties of an ok2_rep_t.
-             * @memberof maxwell.protocol
-             * @interface Iok2_rep_t
-             * @property {number|null} [conn0Ref] ok2_rep_t conn0Ref
-             * @property {number|null} [conn1Ref] ok2_rep_t conn1Ref
-             * @property {number|null} [ref] ok2_rep_t ref
-             */
-
-            /**
-             * Constructs a new ok2_rep_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents an ok2_rep_t.
-             * @implements Iok2_rep_t
-             * @constructor
-             * @param {maxwell.protocol.Iok2_rep_t=} [properties] Properties to set
-             */
-            function ok2_rep_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ok2_rep_t conn0Ref.
-             * @member {number} conn0Ref
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @instance
-             */
-            ok2_rep_t.prototype.conn0Ref = 0;
-
-            /**
-             * ok2_rep_t conn1Ref.
-             * @member {number} conn1Ref
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @instance
-             */
-            ok2_rep_t.prototype.conn1Ref = 0;
-
-            /**
-             * ok2_rep_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @instance
-             */
-            ok2_rep_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified ok2_rep_t message. Does not implicitly {@link maxwell.protocol.ok2_rep_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @static
-             * @param {maxwell.protocol.Iok2_rep_t} message ok2_rep_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ok2_rep_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.conn0Ref != null && Object.hasOwnProperty.call(message, "conn0Ref"))
-                    writer.uint32(/* id 13, wireType 0 =*/104).uint32(message.conn0Ref);
-                if (message.conn1Ref != null && Object.hasOwnProperty.call(message, "conn1Ref"))
-                    writer.uint32(/* id 14, wireType 0 =*/112).uint32(message.conn1Ref);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes an ok2_rep_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.ok2_rep_t} ok2_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ok2_rep_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.ok2_rep_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 13: {
-                            message.conn0Ref = reader.uint32();
-                            break;
-                        }
-                    case 14: {
-                            message.conn1Ref = reader.uint32();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for ok2_rep_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.ok2_rep_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            ok2_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.ok2_rep_t";
-            };
-
-            return ok2_rep_t;
-        })();
-
-        protocol.error2_rep_t = (function() {
-
-            /**
-             * Properties of an error2_rep_t.
-             * @memberof maxwell.protocol
-             * @interface Ierror2_rep_t
-             * @property {number|null} [code] error2_rep_t code
-             * @property {string|null} [desc] error2_rep_t desc
-             * @property {number|null} [conn0Ref] error2_rep_t conn0Ref
-             * @property {number|null} [conn1Ref] error2_rep_t conn1Ref
-             * @property {number|null} [ref] error2_rep_t ref
-             */
-
-            /**
-             * Constructs a new error2_rep_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents an error2_rep_t.
-             * @implements Ierror2_rep_t
-             * @constructor
-             * @param {maxwell.protocol.Ierror2_rep_t=} [properties] Properties to set
-             */
-            function error2_rep_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * error2_rep_t code.
-             * @member {number} code
-             * @memberof maxwell.protocol.error2_rep_t
-             * @instance
-             */
-            error2_rep_t.prototype.code = 0;
-
-            /**
-             * error2_rep_t desc.
-             * @member {string} desc
-             * @memberof maxwell.protocol.error2_rep_t
-             * @instance
-             */
-            error2_rep_t.prototype.desc = "";
-
-            /**
-             * error2_rep_t conn0Ref.
-             * @member {number} conn0Ref
-             * @memberof maxwell.protocol.error2_rep_t
-             * @instance
-             */
-            error2_rep_t.prototype.conn0Ref = 0;
-
-            /**
-             * error2_rep_t conn1Ref.
-             * @member {number} conn1Ref
-             * @memberof maxwell.protocol.error2_rep_t
-             * @instance
-             */
-            error2_rep_t.prototype.conn1Ref = 0;
-
-            /**
-             * error2_rep_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.error2_rep_t
-             * @instance
-             */
-            error2_rep_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified error2_rep_t message. Does not implicitly {@link maxwell.protocol.error2_rep_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.error2_rep_t
-             * @static
-             * @param {maxwell.protocol.Ierror2_rep_t} message error2_rep_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            error2_rep_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.code);
-                if (message.desc != null && Object.hasOwnProperty.call(message, "desc"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.desc);
-                if (message.conn0Ref != null && Object.hasOwnProperty.call(message, "conn0Ref"))
-                    writer.uint32(/* id 13, wireType 0 =*/104).uint32(message.conn0Ref);
-                if (message.conn1Ref != null && Object.hasOwnProperty.call(message, "conn1Ref"))
-                    writer.uint32(/* id 14, wireType 0 =*/112).uint32(message.conn1Ref);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes an error2_rep_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.error2_rep_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.error2_rep_t} error2_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            error2_rep_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.error2_rep_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.code = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.desc = reader.string();
-                            break;
-                        }
-                    case 13: {
-                            message.conn0Ref = reader.uint32();
-                            break;
-                        }
-                    case 14: {
-                            message.conn1Ref = reader.uint32();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for error2_rep_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.error2_rep_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            error2_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.error2_rep_t";
-            };
-
-            return error2_rep_t;
-        })();
-
         protocol.register_frontend_req_t = (function() {
 
             /**
@@ -1939,8 +1937,6 @@ $root.maxwell = (function() {
              * @memberof maxwell.protocol
              * @interface Iregister_frontend_req_t
              * @property {number|null} [httpPort] register_frontend_req_t httpPort
-             * @property {number|null} [httpsPort] register_frontend_req_t httpsPort
-             * @property {string|null} [publicIp] register_frontend_req_t publicIp
              * @property {number|null} [ref] register_frontend_req_t ref
              */
 
@@ -1968,22 +1964,6 @@ $root.maxwell = (function() {
             register_frontend_req_t.prototype.httpPort = 0;
 
             /**
-             * register_frontend_req_t httpsPort.
-             * @member {number} httpsPort
-             * @memberof maxwell.protocol.register_frontend_req_t
-             * @instance
-             */
-            register_frontend_req_t.prototype.httpsPort = 0;
-
-            /**
-             * register_frontend_req_t publicIp.
-             * @member {string} publicIp
-             * @memberof maxwell.protocol.register_frontend_req_t
-             * @instance
-             */
-            register_frontend_req_t.prototype.publicIp = "";
-
-            /**
              * register_frontend_req_t ref.
              * @member {number} ref
              * @memberof maxwell.protocol.register_frontend_req_t
@@ -2005,10 +1985,6 @@ $root.maxwell = (function() {
                     writer = $Writer.create();
                 if (message.httpPort != null && Object.hasOwnProperty.call(message, "httpPort"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.httpPort);
-                if (message.httpsPort != null && Object.hasOwnProperty.call(message, "httpsPort"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.httpsPort);
-                if (message.publicIp != null && Object.hasOwnProperty.call(message, "publicIp"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.publicIp);
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
                 return writer;
@@ -2034,14 +2010,6 @@ $root.maxwell = (function() {
                     switch (tag >>> 3) {
                     case 1: {
                             message.httpPort = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.httpsPort = reader.uint32();
-                            break;
-                        }
-                    case 3: {
-                            message.publicIp = reader.string();
                             break;
                         }
                     case 15: {
@@ -2380,25 +2348,25 @@ $root.maxwell = (function() {
             return register_backend_rep_t;
         })();
 
-        protocol.register_server_req_t = (function() {
+        protocol.register_service_req_t = (function() {
 
             /**
-             * Properties of a register_server_req_t.
+             * Properties of a register_service_req_t.
              * @memberof maxwell.protocol
-             * @interface Iregister_server_req_t
-             * @property {number|null} [httpPort] register_server_req_t httpPort
-             * @property {number|null} [ref] register_server_req_t ref
+             * @interface Iregister_service_req_t
+             * @property {number|null} [httpPort] register_service_req_t httpPort
+             * @property {number|null} [ref] register_service_req_t ref
              */
 
             /**
-             * Constructs a new register_server_req_t.
+             * Constructs a new register_service_req_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents a register_server_req_t.
-             * @implements Iregister_server_req_t
+             * @classdesc Represents a register_service_req_t.
+             * @implements Iregister_service_req_t
              * @constructor
-             * @param {maxwell.protocol.Iregister_server_req_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Iregister_service_req_t=} [properties] Properties to set
              */
-            function register_server_req_t(properties) {
+            function register_service_req_t(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2406,31 +2374,31 @@ $root.maxwell = (function() {
             }
 
             /**
-             * register_server_req_t httpPort.
+             * register_service_req_t httpPort.
              * @member {number} httpPort
-             * @memberof maxwell.protocol.register_server_req_t
+             * @memberof maxwell.protocol.register_service_req_t
              * @instance
              */
-            register_server_req_t.prototype.httpPort = 0;
+            register_service_req_t.prototype.httpPort = 0;
 
             /**
-             * register_server_req_t ref.
+             * register_service_req_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.register_server_req_t
+             * @memberof maxwell.protocol.register_service_req_t
              * @instance
              */
-            register_server_req_t.prototype.ref = 0;
+            register_service_req_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified register_server_req_t message. Does not implicitly {@link maxwell.protocol.register_server_req_t.verify|verify} messages.
+             * Encodes the specified register_service_req_t message. Does not implicitly {@link maxwell.protocol.register_service_req_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.register_server_req_t
+             * @memberof maxwell.protocol.register_service_req_t
              * @static
-             * @param {maxwell.protocol.Iregister_server_req_t} message register_server_req_t message or plain object to encode
+             * @param {maxwell.protocol.Iregister_service_req_t} message register_service_req_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            register_server_req_t.encode = function encode(message, writer) {
+            register_service_req_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.httpPort != null && Object.hasOwnProperty.call(message, "httpPort"))
@@ -2441,20 +2409,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes a register_server_req_t message from the specified reader or buffer.
+             * Decodes a register_service_req_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.register_server_req_t
+             * @memberof maxwell.protocol.register_service_req_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.register_server_req_t} register_server_req_t
+             * @returns {maxwell.protocol.register_service_req_t} register_service_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            register_server_req_t.decode = function decode(reader, length) {
+            register_service_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_server_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_service_req_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2475,41 +2443,41 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for register_server_req_t
+             * Gets the default type url for register_service_req_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.register_server_req_t
+             * @memberof maxwell.protocol.register_service_req_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            register_server_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            register_service_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.register_server_req_t";
+                return typeUrlPrefix + "/maxwell.protocol.register_service_req_t";
             };
 
-            return register_server_req_t;
+            return register_service_req_t;
         })();
 
-        protocol.register_server_rep_t = (function() {
+        protocol.register_service_rep_t = (function() {
 
             /**
-             * Properties of a register_server_rep_t.
+             * Properties of a register_service_rep_t.
              * @memberof maxwell.protocol
-             * @interface Iregister_server_rep_t
-             * @property {number|null} [ref] register_server_rep_t ref
+             * @interface Iregister_service_rep_t
+             * @property {number|null} [ref] register_service_rep_t ref
              */
 
             /**
-             * Constructs a new register_server_rep_t.
+             * Constructs a new register_service_rep_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents a register_server_rep_t.
-             * @implements Iregister_server_rep_t
+             * @classdesc Represents a register_service_rep_t.
+             * @implements Iregister_service_rep_t
              * @constructor
-             * @param {maxwell.protocol.Iregister_server_rep_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Iregister_service_rep_t=} [properties] Properties to set
              */
-            function register_server_rep_t(properties) {
+            function register_service_rep_t(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2517,23 +2485,23 @@ $root.maxwell = (function() {
             }
 
             /**
-             * register_server_rep_t ref.
+             * register_service_rep_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.register_server_rep_t
+             * @memberof maxwell.protocol.register_service_rep_t
              * @instance
              */
-            register_server_rep_t.prototype.ref = 0;
+            register_service_rep_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified register_server_rep_t message. Does not implicitly {@link maxwell.protocol.register_server_rep_t.verify|verify} messages.
+             * Encodes the specified register_service_rep_t message. Does not implicitly {@link maxwell.protocol.register_service_rep_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.register_server_rep_t
+             * @memberof maxwell.protocol.register_service_rep_t
              * @static
-             * @param {maxwell.protocol.Iregister_server_rep_t} message register_server_rep_t message or plain object to encode
+             * @param {maxwell.protocol.Iregister_service_rep_t} message register_service_rep_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            register_server_rep_t.encode = function encode(message, writer) {
+            register_service_rep_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
@@ -2542,20 +2510,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes a register_server_rep_t message from the specified reader or buffer.
+             * Decodes a register_service_rep_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.register_server_rep_t
+             * @memberof maxwell.protocol.register_service_rep_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.register_server_rep_t} register_server_rep_t
+             * @returns {maxwell.protocol.register_service_rep_t} register_service_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            register_server_rep_t.decode = function decode(reader, length) {
+            register_service_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_server_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.register_service_rep_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2572,42 +2540,42 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for register_server_rep_t
+             * Gets the default type url for register_service_rep_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.register_server_rep_t
+             * @memberof maxwell.protocol.register_service_rep_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            register_server_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            register_service_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.register_server_rep_t";
+                return typeUrlPrefix + "/maxwell.protocol.register_service_rep_t";
             };
 
-            return register_server_rep_t;
+            return register_service_rep_t;
         })();
 
-        protocol.add_routes_req_t = (function() {
+        protocol.set_routes_req_t = (function() {
 
             /**
-             * Properties of an add_routes_req_t.
+             * Properties of a set_routes_req_t.
              * @memberof maxwell.protocol
-             * @interface Iadd_routes_req_t
-             * @property {Array.<string>|null} [paths] add_routes_req_t paths
-             * @property {number|null} [ref] add_routes_req_t ref
+             * @interface Iset_routes_req_t
+             * @property {Array.<string>|null} [paths] set_routes_req_t paths
+             * @property {number|null} [ref] set_routes_req_t ref
              */
 
             /**
-             * Constructs a new add_routes_req_t.
+             * Constructs a new set_routes_req_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents an add_routes_req_t.
-             * @implements Iadd_routes_req_t
+             * @classdesc Represents a set_routes_req_t.
+             * @implements Iset_routes_req_t
              * @constructor
-             * @param {maxwell.protocol.Iadd_routes_req_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Iset_routes_req_t=} [properties] Properties to set
              */
-            function add_routes_req_t(properties) {
+            function set_routes_req_t(properties) {
                 this.paths = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -2616,31 +2584,31 @@ $root.maxwell = (function() {
             }
 
             /**
-             * add_routes_req_t paths.
+             * set_routes_req_t paths.
              * @member {Array.<string>} paths
-             * @memberof maxwell.protocol.add_routes_req_t
+             * @memberof maxwell.protocol.set_routes_req_t
              * @instance
              */
-            add_routes_req_t.prototype.paths = $util.emptyArray;
+            set_routes_req_t.prototype.paths = $util.emptyArray;
 
             /**
-             * add_routes_req_t ref.
+             * set_routes_req_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.add_routes_req_t
+             * @memberof maxwell.protocol.set_routes_req_t
              * @instance
              */
-            add_routes_req_t.prototype.ref = 0;
+            set_routes_req_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified add_routes_req_t message. Does not implicitly {@link maxwell.protocol.add_routes_req_t.verify|verify} messages.
+             * Encodes the specified set_routes_req_t message. Does not implicitly {@link maxwell.protocol.set_routes_req_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.add_routes_req_t
+             * @memberof maxwell.protocol.set_routes_req_t
              * @static
-             * @param {maxwell.protocol.Iadd_routes_req_t} message add_routes_req_t message or plain object to encode
+             * @param {maxwell.protocol.Iset_routes_req_t} message set_routes_req_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            add_routes_req_t.encode = function encode(message, writer) {
+            set_routes_req_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.paths != null && message.paths.length)
@@ -2652,20 +2620,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes an add_routes_req_t message from the specified reader or buffer.
+             * Decodes a set_routes_req_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.add_routes_req_t
+             * @memberof maxwell.protocol.set_routes_req_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.add_routes_req_t} add_routes_req_t
+             * @returns {maxwell.protocol.set_routes_req_t} set_routes_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            add_routes_req_t.decode = function decode(reader, length) {
+            set_routes_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_routes_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.set_routes_req_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2688,41 +2656,41 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for add_routes_req_t
+             * Gets the default type url for set_routes_req_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.add_routes_req_t
+             * @memberof maxwell.protocol.set_routes_req_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            add_routes_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            set_routes_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.add_routes_req_t";
+                return typeUrlPrefix + "/maxwell.protocol.set_routes_req_t";
             };
 
-            return add_routes_req_t;
+            return set_routes_req_t;
         })();
 
-        protocol.add_routes_rep_t = (function() {
+        protocol.set_routes_rep_t = (function() {
 
             /**
-             * Properties of an add_routes_rep_t.
+             * Properties of a set_routes_rep_t.
              * @memberof maxwell.protocol
-             * @interface Iadd_routes_rep_t
-             * @property {number|null} [ref] add_routes_rep_t ref
+             * @interface Iset_routes_rep_t
+             * @property {number|null} [ref] set_routes_rep_t ref
              */
 
             /**
-             * Constructs a new add_routes_rep_t.
+             * Constructs a new set_routes_rep_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents an add_routes_rep_t.
-             * @implements Iadd_routes_rep_t
+             * @classdesc Represents a set_routes_rep_t.
+             * @implements Iset_routes_rep_t
              * @constructor
-             * @param {maxwell.protocol.Iadd_routes_rep_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Iset_routes_rep_t=} [properties] Properties to set
              */
-            function add_routes_rep_t(properties) {
+            function set_routes_rep_t(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -2730,23 +2698,23 @@ $root.maxwell = (function() {
             }
 
             /**
-             * add_routes_rep_t ref.
+             * set_routes_rep_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.add_routes_rep_t
+             * @memberof maxwell.protocol.set_routes_rep_t
              * @instance
              */
-            add_routes_rep_t.prototype.ref = 0;
+            set_routes_rep_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified add_routes_rep_t message. Does not implicitly {@link maxwell.protocol.add_routes_rep_t.verify|verify} messages.
+             * Encodes the specified set_routes_rep_t message. Does not implicitly {@link maxwell.protocol.set_routes_rep_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.add_routes_rep_t
+             * @memberof maxwell.protocol.set_routes_rep_t
              * @static
-             * @param {maxwell.protocol.Iadd_routes_rep_t} message add_routes_rep_t message or plain object to encode
+             * @param {maxwell.protocol.Iset_routes_rep_t} message set_routes_rep_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            add_routes_rep_t.encode = function encode(message, writer) {
+            set_routes_rep_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
@@ -2755,20 +2723,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes an add_routes_rep_t message from the specified reader or buffer.
+             * Decodes a set_routes_rep_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.add_routes_rep_t
+             * @memberof maxwell.protocol.set_routes_rep_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.add_routes_rep_t} add_routes_rep_t
+             * @returns {maxwell.protocol.set_routes_rep_t} set_routes_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            add_routes_rep_t.decode = function decode(reader, length) {
+            set_routes_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.add_routes_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.set_routes_rep_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -2785,234 +2753,21 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for add_routes_rep_t
+             * Gets the default type url for set_routes_rep_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.add_routes_rep_t
+             * @memberof maxwell.protocol.set_routes_rep_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            add_routes_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            set_routes_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.add_routes_rep_t";
+                return typeUrlPrefix + "/maxwell.protocol.set_routes_rep_t";
             };
 
-            return add_routes_rep_t;
-        })();
-
-        protocol.delete_routes_req_t = (function() {
-
-            /**
-             * Properties of a delete_routes_req_t.
-             * @memberof maxwell.protocol
-             * @interface Idelete_routes_req_t
-             * @property {Array.<string>|null} [paths] delete_routes_req_t paths
-             * @property {number|null} [ref] delete_routes_req_t ref
-             */
-
-            /**
-             * Constructs a new delete_routes_req_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents a delete_routes_req_t.
-             * @implements Idelete_routes_req_t
-             * @constructor
-             * @param {maxwell.protocol.Idelete_routes_req_t=} [properties] Properties to set
-             */
-            function delete_routes_req_t(properties) {
-                this.paths = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * delete_routes_req_t paths.
-             * @member {Array.<string>} paths
-             * @memberof maxwell.protocol.delete_routes_req_t
-             * @instance
-             */
-            delete_routes_req_t.prototype.paths = $util.emptyArray;
-
-            /**
-             * delete_routes_req_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.delete_routes_req_t
-             * @instance
-             */
-            delete_routes_req_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified delete_routes_req_t message. Does not implicitly {@link maxwell.protocol.delete_routes_req_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.delete_routes_req_t
-             * @static
-             * @param {maxwell.protocol.Idelete_routes_req_t} message delete_routes_req_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            delete_routes_req_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.paths != null && message.paths.length)
-                    for (var i = 0; i < message.paths.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.paths[i]);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes a delete_routes_req_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.delete_routes_req_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.delete_routes_req_t} delete_routes_req_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            delete_routes_req_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_routes_req_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            if (!(message.paths && message.paths.length))
-                                message.paths = [];
-                            message.paths.push(reader.string());
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for delete_routes_req_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.delete_routes_req_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            delete_routes_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.delete_routes_req_t";
-            };
-
-            return delete_routes_req_t;
-        })();
-
-        protocol.delete_routes_rep_t = (function() {
-
-            /**
-             * Properties of a delete_routes_rep_t.
-             * @memberof maxwell.protocol
-             * @interface Idelete_routes_rep_t
-             * @property {number|null} [ref] delete_routes_rep_t ref
-             */
-
-            /**
-             * Constructs a new delete_routes_rep_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents a delete_routes_rep_t.
-             * @implements Idelete_routes_rep_t
-             * @constructor
-             * @param {maxwell.protocol.Idelete_routes_rep_t=} [properties] Properties to set
-             */
-            function delete_routes_rep_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * delete_routes_rep_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.delete_routes_rep_t
-             * @instance
-             */
-            delete_routes_rep_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified delete_routes_rep_t message. Does not implicitly {@link maxwell.protocol.delete_routes_rep_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.delete_routes_rep_t
-             * @static
-             * @param {maxwell.protocol.Idelete_routes_rep_t} message delete_routes_rep_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            delete_routes_rep_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes a delete_routes_rep_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.delete_routes_rep_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.delete_routes_rep_t} delete_routes_rep_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            delete_routes_rep_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.delete_routes_rep_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for delete_routes_rep_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.delete_routes_rep_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            delete_routes_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.delete_routes_rep_t";
-            };
-
-            return delete_routes_rep_t;
+            return set_routes_rep_t;
         })();
 
         protocol.get_routes_req_t = (function() {
@@ -3228,26 +2983,24 @@ $root.maxwell = (function() {
             return get_routes_rep_t;
         })();
 
-        protocol.route_added_msg_t = (function() {
+        protocol.pick_frontend_req_t = (function() {
 
             /**
-             * Properties of a route_added_msg_t.
+             * Properties of a pick_frontend_req_t.
              * @memberof maxwell.protocol
-             * @interface Iroute_added_msg_t
-             * @property {string|null} [path] route_added_msg_t path
-             * @property {string|null} [endpoint] route_added_msg_t endpoint
-             * @property {number|null} [ref] route_added_msg_t ref
+             * @interface Ipick_frontend_req_t
+             * @property {number|null} [ref] pick_frontend_req_t ref
              */
 
             /**
-             * Constructs a new route_added_msg_t.
+             * Constructs a new pick_frontend_req_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents a route_added_msg_t.
-             * @implements Iroute_added_msg_t
+             * @classdesc Represents a pick_frontend_req_t.
+             * @implements Ipick_frontend_req_t
              * @constructor
-             * @param {maxwell.protocol.Iroute_added_msg_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Ipick_frontend_req_t=} [properties] Properties to set
              */
-            function route_added_msg_t(properties) {
+            function pick_frontend_req_t(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3255,417 +3008,23 @@ $root.maxwell = (function() {
             }
 
             /**
-             * route_added_msg_t path.
-             * @member {string} path
-             * @memberof maxwell.protocol.route_added_msg_t
-             * @instance
-             */
-            route_added_msg_t.prototype.path = "";
-
-            /**
-             * route_added_msg_t endpoint.
-             * @member {string} endpoint
-             * @memberof maxwell.protocol.route_added_msg_t
-             * @instance
-             */
-            route_added_msg_t.prototype.endpoint = "";
-
-            /**
-             * route_added_msg_t ref.
+             * pick_frontend_req_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.route_added_msg_t
+             * @memberof maxwell.protocol.pick_frontend_req_t
              * @instance
              */
-            route_added_msg_t.prototype.ref = 0;
+            pick_frontend_req_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified route_added_msg_t message. Does not implicitly {@link maxwell.protocol.route_added_msg_t.verify|verify} messages.
+             * Encodes the specified pick_frontend_req_t message. Does not implicitly {@link maxwell.protocol.pick_frontend_req_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.route_added_msg_t
+             * @memberof maxwell.protocol.pick_frontend_req_t
              * @static
-             * @param {maxwell.protocol.Iroute_added_msg_t} message route_added_msg_t message or plain object to encode
+             * @param {maxwell.protocol.Ipick_frontend_req_t} message pick_frontend_req_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            route_added_msg_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
-                if (message.endpoint != null && Object.hasOwnProperty.call(message, "endpoint"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.endpoint);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes a route_added_msg_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.route_added_msg_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.route_added_msg_t} route_added_msg_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            route_added_msg_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.route_added_msg_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.path = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.endpoint = reader.string();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for route_added_msg_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.route_added_msg_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            route_added_msg_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.route_added_msg_t";
-            };
-
-            return route_added_msg_t;
-        })();
-
-        protocol.route_deleted_msg_t = (function() {
-
-            /**
-             * Properties of a route_deleted_msg_t.
-             * @memberof maxwell.protocol
-             * @interface Iroute_deleted_msg_t
-             * @property {string|null} [path] route_deleted_msg_t path
-             * @property {string|null} [endpoint] route_deleted_msg_t endpoint
-             * @property {number|null} [ref] route_deleted_msg_t ref
-             */
-
-            /**
-             * Constructs a new route_deleted_msg_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents a route_deleted_msg_t.
-             * @implements Iroute_deleted_msg_t
-             * @constructor
-             * @param {maxwell.protocol.Iroute_deleted_msg_t=} [properties] Properties to set
-             */
-            function route_deleted_msg_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * route_deleted_msg_t path.
-             * @member {string} path
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @instance
-             */
-            route_deleted_msg_t.prototype.path = "";
-
-            /**
-             * route_deleted_msg_t endpoint.
-             * @member {string} endpoint
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @instance
-             */
-            route_deleted_msg_t.prototype.endpoint = "";
-
-            /**
-             * route_deleted_msg_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @instance
-             */
-            route_deleted_msg_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified route_deleted_msg_t message. Does not implicitly {@link maxwell.protocol.route_deleted_msg_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @static
-             * @param {maxwell.protocol.Iroute_deleted_msg_t} message route_deleted_msg_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            route_deleted_msg_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
-                if (message.endpoint != null && Object.hasOwnProperty.call(message, "endpoint"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.endpoint);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes a route_deleted_msg_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.route_deleted_msg_t} route_deleted_msg_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            route_deleted_msg_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.route_deleted_msg_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.path = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.endpoint = reader.string();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for route_deleted_msg_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.route_deleted_msg_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            route_deleted_msg_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.route_deleted_msg_t";
-            };
-
-            return route_deleted_msg_t;
-        })();
-
-        protocol.route_health_changed_msg_t = (function() {
-
-            /**
-             * Properties of a route_health_changed_msg_t.
-             * @memberof maxwell.protocol
-             * @interface Iroute_health_changed_msg_t
-             * @property {string|null} [path] route_health_changed_msg_t path
-             * @property {string|null} [endpoint] route_health_changed_msg_t endpoint
-             * @property {boolean|null} [isHealthy] route_health_changed_msg_t isHealthy
-             * @property {number|null} [ref] route_health_changed_msg_t ref
-             */
-
-            /**
-             * Constructs a new route_health_changed_msg_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents a route_health_changed_msg_t.
-             * @implements Iroute_health_changed_msg_t
-             * @constructor
-             * @param {maxwell.protocol.Iroute_health_changed_msg_t=} [properties] Properties to set
-             */
-            function route_health_changed_msg_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * route_health_changed_msg_t path.
-             * @member {string} path
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @instance
-             */
-            route_health_changed_msg_t.prototype.path = "";
-
-            /**
-             * route_health_changed_msg_t endpoint.
-             * @member {string} endpoint
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @instance
-             */
-            route_health_changed_msg_t.prototype.endpoint = "";
-
-            /**
-             * route_health_changed_msg_t isHealthy.
-             * @member {boolean} isHealthy
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @instance
-             */
-            route_health_changed_msg_t.prototype.isHealthy = false;
-
-            /**
-             * route_health_changed_msg_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @instance
-             */
-            route_health_changed_msg_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified route_health_changed_msg_t message. Does not implicitly {@link maxwell.protocol.route_health_changed_msg_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @static
-             * @param {maxwell.protocol.Iroute_health_changed_msg_t} message route_health_changed_msg_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            route_health_changed_msg_t.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
-                if (message.endpoint != null && Object.hasOwnProperty.call(message, "endpoint"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.endpoint);
-                if (message.isHealthy != null && Object.hasOwnProperty.call(message, "isHealthy"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.isHealthy);
-                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
-                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
-                return writer;
-            };
-
-            /**
-             * Decodes a route_health_changed_msg_t message from the specified reader or buffer.
-             * @function decode
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.route_health_changed_msg_t} route_health_changed_msg_t
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            route_health_changed_msg_t.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.route_health_changed_msg_t();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.path = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.endpoint = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.isHealthy = reader.bool();
-                            break;
-                        }
-                    case 15: {
-                            message.ref = reader.uint32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Gets the default type url for route_health_changed_msg_t
-             * @function getTypeUrl
-             * @memberof maxwell.protocol.route_health_changed_msg_t
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            route_health_changed_msg_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/maxwell.protocol.route_health_changed_msg_t";
-            };
-
-            return route_health_changed_msg_t;
-        })();
-
-        protocol.assign_frontend_req_t = (function() {
-
-            /**
-             * Properties of an assign_frontend_req_t.
-             * @memberof maxwell.protocol
-             * @interface Iassign_frontend_req_t
-             * @property {number|null} [ref] assign_frontend_req_t ref
-             */
-
-            /**
-             * Constructs a new assign_frontend_req_t.
-             * @memberof maxwell.protocol
-             * @classdesc Represents an assign_frontend_req_t.
-             * @implements Iassign_frontend_req_t
-             * @constructor
-             * @param {maxwell.protocol.Iassign_frontend_req_t=} [properties] Properties to set
-             */
-            function assign_frontend_req_t(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * assign_frontend_req_t ref.
-             * @member {number} ref
-             * @memberof maxwell.protocol.assign_frontend_req_t
-             * @instance
-             */
-            assign_frontend_req_t.prototype.ref = 0;
-
-            /**
-             * Encodes the specified assign_frontend_req_t message. Does not implicitly {@link maxwell.protocol.assign_frontend_req_t.verify|verify} messages.
-             * @function encode
-             * @memberof maxwell.protocol.assign_frontend_req_t
-             * @static
-             * @param {maxwell.protocol.Iassign_frontend_req_t} message assign_frontend_req_t message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            assign_frontend_req_t.encode = function encode(message, writer) {
+            pick_frontend_req_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
@@ -3674,20 +3033,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes an assign_frontend_req_t message from the specified reader or buffer.
+             * Decodes a pick_frontend_req_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.assign_frontend_req_t
+             * @memberof maxwell.protocol.pick_frontend_req_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.assign_frontend_req_t} assign_frontend_req_t
+             * @returns {maxwell.protocol.pick_frontend_req_t} pick_frontend_req_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            assign_frontend_req_t.decode = function decode(reader, length) {
+            pick_frontend_req_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.assign_frontend_req_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pick_frontend_req_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3704,42 +3063,42 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for assign_frontend_req_t
+             * Gets the default type url for pick_frontend_req_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.assign_frontend_req_t
+             * @memberof maxwell.protocol.pick_frontend_req_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            assign_frontend_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            pick_frontend_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.assign_frontend_req_t";
+                return typeUrlPrefix + "/maxwell.protocol.pick_frontend_req_t";
             };
 
-            return assign_frontend_req_t;
+            return pick_frontend_req_t;
         })();
 
-        protocol.assign_frontend_rep_t = (function() {
+        protocol.pick_frontend_rep_t = (function() {
 
             /**
-             * Properties of an assign_frontend_rep_t.
+             * Properties of a pick_frontend_rep_t.
              * @memberof maxwell.protocol
-             * @interface Iassign_frontend_rep_t
-             * @property {string|null} [endpoint] assign_frontend_rep_t endpoint
-             * @property {number|null} [ref] assign_frontend_rep_t ref
+             * @interface Ipick_frontend_rep_t
+             * @property {string|null} [endpoint] pick_frontend_rep_t endpoint
+             * @property {number|null} [ref] pick_frontend_rep_t ref
              */
 
             /**
-             * Constructs a new assign_frontend_rep_t.
+             * Constructs a new pick_frontend_rep_t.
              * @memberof maxwell.protocol
-             * @classdesc Represents an assign_frontend_rep_t.
-             * @implements Iassign_frontend_rep_t
+             * @classdesc Represents a pick_frontend_rep_t.
+             * @implements Ipick_frontend_rep_t
              * @constructor
-             * @param {maxwell.protocol.Iassign_frontend_rep_t=} [properties] Properties to set
+             * @param {maxwell.protocol.Ipick_frontend_rep_t=} [properties] Properties to set
              */
-            function assign_frontend_rep_t(properties) {
+            function pick_frontend_rep_t(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3747,31 +3106,31 @@ $root.maxwell = (function() {
             }
 
             /**
-             * assign_frontend_rep_t endpoint.
+             * pick_frontend_rep_t endpoint.
              * @member {string} endpoint
-             * @memberof maxwell.protocol.assign_frontend_rep_t
+             * @memberof maxwell.protocol.pick_frontend_rep_t
              * @instance
              */
-            assign_frontend_rep_t.prototype.endpoint = "";
+            pick_frontend_rep_t.prototype.endpoint = "";
 
             /**
-             * assign_frontend_rep_t ref.
+             * pick_frontend_rep_t ref.
              * @member {number} ref
-             * @memberof maxwell.protocol.assign_frontend_rep_t
+             * @memberof maxwell.protocol.pick_frontend_rep_t
              * @instance
              */
-            assign_frontend_rep_t.prototype.ref = 0;
+            pick_frontend_rep_t.prototype.ref = 0;
 
             /**
-             * Encodes the specified assign_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.assign_frontend_rep_t.verify|verify} messages.
+             * Encodes the specified pick_frontend_rep_t message. Does not implicitly {@link maxwell.protocol.pick_frontend_rep_t.verify|verify} messages.
              * @function encode
-             * @memberof maxwell.protocol.assign_frontend_rep_t
+             * @memberof maxwell.protocol.pick_frontend_rep_t
              * @static
-             * @param {maxwell.protocol.Iassign_frontend_rep_t} message assign_frontend_rep_t message or plain object to encode
+             * @param {maxwell.protocol.Ipick_frontend_rep_t} message pick_frontend_rep_t message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            assign_frontend_rep_t.encode = function encode(message, writer) {
+            pick_frontend_rep_t.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.endpoint != null && Object.hasOwnProperty.call(message, "endpoint"))
@@ -3782,20 +3141,20 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Decodes an assign_frontend_rep_t message from the specified reader or buffer.
+             * Decodes a pick_frontend_rep_t message from the specified reader or buffer.
              * @function decode
-             * @memberof maxwell.protocol.assign_frontend_rep_t
+             * @memberof maxwell.protocol.pick_frontend_rep_t
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {maxwell.protocol.assign_frontend_rep_t} assign_frontend_rep_t
+             * @returns {maxwell.protocol.pick_frontend_rep_t} pick_frontend_rep_t
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            assign_frontend_rep_t.decode = function decode(reader, length) {
+            pick_frontend_rep_t.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.assign_frontend_rep_t();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pick_frontend_rep_t();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3816,21 +3175,234 @@ $root.maxwell = (function() {
             };
 
             /**
-             * Gets the default type url for assign_frontend_rep_t
+             * Gets the default type url for pick_frontend_rep_t
              * @function getTypeUrl
-             * @memberof maxwell.protocol.assign_frontend_rep_t
+             * @memberof maxwell.protocol.pick_frontend_rep_t
              * @static
              * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
              * @returns {string} The default type url
              */
-            assign_frontend_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            pick_frontend_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
                 if (typeUrlPrefix === undefined) {
                     typeUrlPrefix = "type.googleapis.com";
                 }
-                return typeUrlPrefix + "/maxwell.protocol.assign_frontend_rep_t";
+                return typeUrlPrefix + "/maxwell.protocol.pick_frontend_rep_t";
             };
 
-            return assign_frontend_rep_t;
+            return pick_frontend_rep_t;
+        })();
+
+        protocol.pick_frontends_req_t = (function() {
+
+            /**
+             * Properties of a pick_frontends_req_t.
+             * @memberof maxwell.protocol
+             * @interface Ipick_frontends_req_t
+             * @property {number|null} [ref] pick_frontends_req_t ref
+             */
+
+            /**
+             * Constructs a new pick_frontends_req_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a pick_frontends_req_t.
+             * @implements Ipick_frontends_req_t
+             * @constructor
+             * @param {maxwell.protocol.Ipick_frontends_req_t=} [properties] Properties to set
+             */
+            function pick_frontends_req_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * pick_frontends_req_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.pick_frontends_req_t
+             * @instance
+             */
+            pick_frontends_req_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified pick_frontends_req_t message. Does not implicitly {@link maxwell.protocol.pick_frontends_req_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.pick_frontends_req_t
+             * @static
+             * @param {maxwell.protocol.Ipick_frontends_req_t} message pick_frontends_req_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            pick_frontends_req_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a pick_frontends_req_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.pick_frontends_req_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.pick_frontends_req_t} pick_frontends_req_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            pick_frontends_req_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pick_frontends_req_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for pick_frontends_req_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.pick_frontends_req_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            pick_frontends_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.pick_frontends_req_t";
+            };
+
+            return pick_frontends_req_t;
+        })();
+
+        protocol.pick_frontends_rep_t = (function() {
+
+            /**
+             * Properties of a pick_frontends_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Ipick_frontends_rep_t
+             * @property {Array.<string>|null} [endpoints] pick_frontends_rep_t endpoints
+             * @property {number|null} [ref] pick_frontends_rep_t ref
+             */
+
+            /**
+             * Constructs a new pick_frontends_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a pick_frontends_rep_t.
+             * @implements Ipick_frontends_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Ipick_frontends_rep_t=} [properties] Properties to set
+             */
+            function pick_frontends_rep_t(properties) {
+                this.endpoints = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * pick_frontends_rep_t endpoints.
+             * @member {Array.<string>} endpoints
+             * @memberof maxwell.protocol.pick_frontends_rep_t
+             * @instance
+             */
+            pick_frontends_rep_t.prototype.endpoints = $util.emptyArray;
+
+            /**
+             * pick_frontends_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.pick_frontends_rep_t
+             * @instance
+             */
+            pick_frontends_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified pick_frontends_rep_t message. Does not implicitly {@link maxwell.protocol.pick_frontends_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.pick_frontends_rep_t
+             * @static
+             * @param {maxwell.protocol.Ipick_frontends_rep_t} message pick_frontends_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            pick_frontends_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.endpoints != null && message.endpoints.length)
+                    for (var i = 0; i < message.endpoints.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.endpoints[i]);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a pick_frontends_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.pick_frontends_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.pick_frontends_rep_t} pick_frontends_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            pick_frontends_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.pick_frontends_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.endpoints && message.endpoints.length))
+                                message.endpoints = [];
+                            message.endpoints.push(reader.string());
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for pick_frontends_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.pick_frontends_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            pick_frontends_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.pick_frontends_rep_t";
+            };
+
+            return pick_frontends_rep_t;
         })();
 
         protocol.locate_topic_req_t = (function() {
@@ -4401,6 +3973,7 @@ $root.maxwell = (function() {
              * @interface Iheader_t
              * @property {string|null} [agent] header_t agent
              * @property {string|null} [endpoint] header_t endpoint
+             * @property {string|null} [token] header_t token
              */
 
             /**
@@ -4435,6 +4008,14 @@ $root.maxwell = (function() {
             header_t.prototype.endpoint = "";
 
             /**
+             * header_t token.
+             * @member {string} token
+             * @memberof maxwell.protocol.header_t
+             * @instance
+             */
+            header_t.prototype.token = "";
+
+            /**
              * Encodes the specified header_t message. Does not implicitly {@link maxwell.protocol.header_t.verify|verify} messages.
              * @function encode
              * @memberof maxwell.protocol.header_t
@@ -4450,6 +4031,8 @@ $root.maxwell = (function() {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.agent);
                 if (message.endpoint != null && Object.hasOwnProperty.call(message, "endpoint"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.endpoint);
+                if (message.token != null && Object.hasOwnProperty.call(message, "token"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
                 return writer;
             };
 
@@ -4477,6 +4060,10 @@ $root.maxwell = (function() {
                         }
                     case 2: {
                             message.endpoint = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.token = reader.string();
                             break;
                         }
                     default:
