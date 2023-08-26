@@ -5,7 +5,7 @@ cd ${current_dir}
 
 # Fetch proto files
 if [[ ! -d proto ]]; then
-    git clone -b dev https://github.com/maxwell-dev/maxwell-protocol proto;
+    git clone -b main https://github.com/maxwell-dev/maxwell-protocol proto;
 fi
 
 # Generate pb files
