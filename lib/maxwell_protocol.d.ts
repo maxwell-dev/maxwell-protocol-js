@@ -1899,5 +1899,27 @@ export namespace maxwell {
              */
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
+
+        /** error_code_t enum. */
+        enum error_code_t {
+            OK = 0,
+            UNKNOWN_MSG = 1,
+            NOT_ALLOWED_TO_REGISTER_FRONTEND = 100,
+            NOT_ALLOWED_TO_REGISTER_BACKEND = 101,
+            NOT_ALLOWED_TO_REGISTER_SERVICE = 102,
+            FAILED_TO_PICK_FRONTEND = 103,
+            FAILED_TO_LOCATE_TOPIC = 104,
+            MASTER_ERROR = 199,
+            FAILED_TO_REQUEST_SERVICE = 200,
+            FAILED_TO_REQUEST_BACKEND = 201,
+            FRONTEND_ERROR = 299,
+            FAILED_TO_PUSH = 300,
+            FAILED_TO_PULL = 301,
+            UNKNOWN_TOPIC = 302,
+            BACKEND_ERROR = 399,
+            UNKNOWN_PATH = 400,
+            SERVICE_ERROR = 499,
+            CLIENT_ERROR = 599
+        }
     }
 }
