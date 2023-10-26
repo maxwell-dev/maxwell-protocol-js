@@ -33,6 +33,10 @@ export namespace maxwell {
             SET_ROUTES_REP = 72,
             GET_ROUTES_REQ = 75,
             GET_ROUTES_REP = 76,
+            GET_TOPIC_DIST_CHECKSUM_REQ = 77,
+            GET_TOPIC_DIST_CHECKSUM_REP = 78,
+            GET_ROUTE_DIST_CHECKSUM_REQ = 79,
+            GET_ROUTE_DIST_CHECKSUM_REP = 80,
             PICK_FRONTEND_REQ = 81,
             PICK_FRONTEND_REP = 82,
             PICK_FRONTENDS_REQ = 83,
@@ -1339,6 +1343,198 @@ export namespace maxwell {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
 
+        /** Properties of a get_topic_dist_checksum_req_t. */
+        interface Iget_topic_dist_checksum_req_t {
+
+            /** get_topic_dist_checksum_req_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents a get_topic_dist_checksum_req_t. */
+        class get_topic_dist_checksum_req_t implements Iget_topic_dist_checksum_req_t {
+
+            /**
+             * Constructs a new get_topic_dist_checksum_req_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iget_topic_dist_checksum_req_t);
+
+            /** get_topic_dist_checksum_req_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified get_topic_dist_checksum_req_t message. Does not implicitly {@link maxwell.protocol.get_topic_dist_checksum_req_t.verify|verify} messages.
+             * @param message get_topic_dist_checksum_req_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iget_topic_dist_checksum_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a get_topic_dist_checksum_req_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns get_topic_dist_checksum_req_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.get_topic_dist_checksum_req_t;
+
+            /**
+             * Gets the default type url for get_topic_dist_checksum_req_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of a get_topic_dist_checksum_rep_t. */
+        interface Iget_topic_dist_checksum_rep_t {
+
+            /** get_topic_dist_checksum_rep_t checksum */
+            checksum?: (number|null);
+
+            /** get_topic_dist_checksum_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents a get_topic_dist_checksum_rep_t. */
+        class get_topic_dist_checksum_rep_t implements Iget_topic_dist_checksum_rep_t {
+
+            /**
+             * Constructs a new get_topic_dist_checksum_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iget_topic_dist_checksum_rep_t);
+
+            /** get_topic_dist_checksum_rep_t checksum. */
+            public checksum: number;
+
+            /** get_topic_dist_checksum_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified get_topic_dist_checksum_rep_t message. Does not implicitly {@link maxwell.protocol.get_topic_dist_checksum_rep_t.verify|verify} messages.
+             * @param message get_topic_dist_checksum_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iget_topic_dist_checksum_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a get_topic_dist_checksum_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns get_topic_dist_checksum_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.get_topic_dist_checksum_rep_t;
+
+            /**
+             * Gets the default type url for get_topic_dist_checksum_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of a get_route_dist_checksum_req_t. */
+        interface Iget_route_dist_checksum_req_t {
+
+            /** get_route_dist_checksum_req_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents a get_route_dist_checksum_req_t. */
+        class get_route_dist_checksum_req_t implements Iget_route_dist_checksum_req_t {
+
+            /**
+             * Constructs a new get_route_dist_checksum_req_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iget_route_dist_checksum_req_t);
+
+            /** get_route_dist_checksum_req_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified get_route_dist_checksum_req_t message. Does not implicitly {@link maxwell.protocol.get_route_dist_checksum_req_t.verify|verify} messages.
+             * @param message get_route_dist_checksum_req_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iget_route_dist_checksum_req_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a get_route_dist_checksum_req_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns get_route_dist_checksum_req_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.get_route_dist_checksum_req_t;
+
+            /**
+             * Gets the default type url for get_route_dist_checksum_req_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
+        /** Properties of a get_route_dist_checksum_rep_t. */
+        interface Iget_route_dist_checksum_rep_t {
+
+            /** get_route_dist_checksum_rep_t checksum */
+            checksum?: (number|null);
+
+            /** get_route_dist_checksum_rep_t ref */
+            ref?: (number|null);
+        }
+
+        /** Represents a get_route_dist_checksum_rep_t. */
+        class get_route_dist_checksum_rep_t implements Iget_route_dist_checksum_rep_t {
+
+            /**
+             * Constructs a new get_route_dist_checksum_rep_t.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: maxwell.protocol.Iget_route_dist_checksum_rep_t);
+
+            /** get_route_dist_checksum_rep_t checksum. */
+            public checksum: number;
+
+            /** get_route_dist_checksum_rep_t ref. */
+            public ref: number;
+
+            /**
+             * Encodes the specified get_route_dist_checksum_rep_t message. Does not implicitly {@link maxwell.protocol.get_route_dist_checksum_rep_t.verify|verify} messages.
+             * @param message get_route_dist_checksum_rep_t message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: maxwell.protocol.Iget_route_dist_checksum_rep_t, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a get_route_dist_checksum_rep_t message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns get_route_dist_checksum_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): maxwell.protocol.get_route_dist_checksum_rep_t;
+
+            /**
+             * Gets the default type url for get_route_dist_checksum_rep_t
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+
         /** Properties of a pick_frontend_req_t. */
         interface Ipick_frontend_req_t {
 
@@ -1907,8 +2103,9 @@ export namespace maxwell {
             NOT_ALLOWED_TO_REGISTER_FRONTEND = 100,
             NOT_ALLOWED_TO_REGISTER_BACKEND = 101,
             NOT_ALLOWED_TO_REGISTER_SERVICE = 102,
-            FAILED_TO_PICK_FRONTEND = 103,
-            FAILED_TO_LOCATE_TOPIC = 104,
+            FAILED_TO_SET_ROUTES = 103,
+            FAILED_TO_PICK_FRONTEND = 104,
+            FAILED_TO_LOCATE_TOPIC = 105,
             MASTER_ERROR = 199,
             FAILED_TO_REQUEST_SERVICE = 200,
             FAILED_TO_REQUEST_BACKEND = 201,

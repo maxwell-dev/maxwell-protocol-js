@@ -56,6 +56,10 @@ $root.maxwell = (function() {
          * @property {number} SET_ROUTES_REP=72 SET_ROUTES_REP value
          * @property {number} GET_ROUTES_REQ=75 GET_ROUTES_REQ value
          * @property {number} GET_ROUTES_REP=76 GET_ROUTES_REP value
+         * @property {number} GET_TOPIC_DIST_CHECKSUM_REQ=77 GET_TOPIC_DIST_CHECKSUM_REQ value
+         * @property {number} GET_TOPIC_DIST_CHECKSUM_REP=78 GET_TOPIC_DIST_CHECKSUM_REP value
+         * @property {number} GET_ROUTE_DIST_CHECKSUM_REQ=79 GET_ROUTE_DIST_CHECKSUM_REQ value
+         * @property {number} GET_ROUTE_DIST_CHECKSUM_REP=80 GET_ROUTE_DIST_CHECKSUM_REP value
          * @property {number} PICK_FRONTEND_REQ=81 PICK_FRONTEND_REQ value
          * @property {number} PICK_FRONTEND_REP=82 PICK_FRONTEND_REP value
          * @property {number} PICK_FRONTENDS_REQ=83 PICK_FRONTENDS_REQ value
@@ -92,6 +96,10 @@ $root.maxwell = (function() {
             values[valuesById[72] = "SET_ROUTES_REP"] = 72;
             values[valuesById[75] = "GET_ROUTES_REQ"] = 75;
             values[valuesById[76] = "GET_ROUTES_REP"] = 76;
+            values[valuesById[77] = "GET_TOPIC_DIST_CHECKSUM_REQ"] = 77;
+            values[valuesById[78] = "GET_TOPIC_DIST_CHECKSUM_REP"] = 78;
+            values[valuesById[79] = "GET_ROUTE_DIST_CHECKSUM_REQ"] = 79;
+            values[valuesById[80] = "GET_ROUTE_DIST_CHECKSUM_REP"] = 80;
             values[valuesById[81] = "PICK_FRONTEND_REQ"] = 81;
             values[valuesById[82] = "PICK_FRONTEND_REP"] = 82;
             values[valuesById[83] = "PICK_FRONTENDS_REQ"] = 83;
@@ -2983,6 +2991,424 @@ $root.maxwell = (function() {
             return get_routes_rep_t;
         })();
 
+        protocol.get_topic_dist_checksum_req_t = (function() {
+
+            /**
+             * Properties of a get_topic_dist_checksum_req_t.
+             * @memberof maxwell.protocol
+             * @interface Iget_topic_dist_checksum_req_t
+             * @property {number|null} [ref] get_topic_dist_checksum_req_t ref
+             */
+
+            /**
+             * Constructs a new get_topic_dist_checksum_req_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a get_topic_dist_checksum_req_t.
+             * @implements Iget_topic_dist_checksum_req_t
+             * @constructor
+             * @param {maxwell.protocol.Iget_topic_dist_checksum_req_t=} [properties] Properties to set
+             */
+            function get_topic_dist_checksum_req_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * get_topic_dist_checksum_req_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.get_topic_dist_checksum_req_t
+             * @instance
+             */
+            get_topic_dist_checksum_req_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified get_topic_dist_checksum_req_t message. Does not implicitly {@link maxwell.protocol.get_topic_dist_checksum_req_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.get_topic_dist_checksum_req_t
+             * @static
+             * @param {maxwell.protocol.Iget_topic_dist_checksum_req_t} message get_topic_dist_checksum_req_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            get_topic_dist_checksum_req_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a get_topic_dist_checksum_req_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.get_topic_dist_checksum_req_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.get_topic_dist_checksum_req_t} get_topic_dist_checksum_req_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            get_topic_dist_checksum_req_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.get_topic_dist_checksum_req_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for get_topic_dist_checksum_req_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.get_topic_dist_checksum_req_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            get_topic_dist_checksum_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.get_topic_dist_checksum_req_t";
+            };
+
+            return get_topic_dist_checksum_req_t;
+        })();
+
+        protocol.get_topic_dist_checksum_rep_t = (function() {
+
+            /**
+             * Properties of a get_topic_dist_checksum_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Iget_topic_dist_checksum_rep_t
+             * @property {number|null} [checksum] get_topic_dist_checksum_rep_t checksum
+             * @property {number|null} [ref] get_topic_dist_checksum_rep_t ref
+             */
+
+            /**
+             * Constructs a new get_topic_dist_checksum_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a get_topic_dist_checksum_rep_t.
+             * @implements Iget_topic_dist_checksum_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Iget_topic_dist_checksum_rep_t=} [properties] Properties to set
+             */
+            function get_topic_dist_checksum_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * get_topic_dist_checksum_rep_t checksum.
+             * @member {number} checksum
+             * @memberof maxwell.protocol.get_topic_dist_checksum_rep_t
+             * @instance
+             */
+            get_topic_dist_checksum_rep_t.prototype.checksum = 0;
+
+            /**
+             * get_topic_dist_checksum_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.get_topic_dist_checksum_rep_t
+             * @instance
+             */
+            get_topic_dist_checksum_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified get_topic_dist_checksum_rep_t message. Does not implicitly {@link maxwell.protocol.get_topic_dist_checksum_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.get_topic_dist_checksum_rep_t
+             * @static
+             * @param {maxwell.protocol.Iget_topic_dist_checksum_rep_t} message get_topic_dist_checksum_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            get_topic_dist_checksum_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.checksum != null && Object.hasOwnProperty.call(message, "checksum"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.checksum);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a get_topic_dist_checksum_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.get_topic_dist_checksum_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.get_topic_dist_checksum_rep_t} get_topic_dist_checksum_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            get_topic_dist_checksum_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.get_topic_dist_checksum_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.checksum = reader.uint32();
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for get_topic_dist_checksum_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.get_topic_dist_checksum_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            get_topic_dist_checksum_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.get_topic_dist_checksum_rep_t";
+            };
+
+            return get_topic_dist_checksum_rep_t;
+        })();
+
+        protocol.get_route_dist_checksum_req_t = (function() {
+
+            /**
+             * Properties of a get_route_dist_checksum_req_t.
+             * @memberof maxwell.protocol
+             * @interface Iget_route_dist_checksum_req_t
+             * @property {number|null} [ref] get_route_dist_checksum_req_t ref
+             */
+
+            /**
+             * Constructs a new get_route_dist_checksum_req_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a get_route_dist_checksum_req_t.
+             * @implements Iget_route_dist_checksum_req_t
+             * @constructor
+             * @param {maxwell.protocol.Iget_route_dist_checksum_req_t=} [properties] Properties to set
+             */
+            function get_route_dist_checksum_req_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * get_route_dist_checksum_req_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.get_route_dist_checksum_req_t
+             * @instance
+             */
+            get_route_dist_checksum_req_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified get_route_dist_checksum_req_t message. Does not implicitly {@link maxwell.protocol.get_route_dist_checksum_req_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.get_route_dist_checksum_req_t
+             * @static
+             * @param {maxwell.protocol.Iget_route_dist_checksum_req_t} message get_route_dist_checksum_req_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            get_route_dist_checksum_req_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a get_route_dist_checksum_req_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.get_route_dist_checksum_req_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.get_route_dist_checksum_req_t} get_route_dist_checksum_req_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            get_route_dist_checksum_req_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.get_route_dist_checksum_req_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for get_route_dist_checksum_req_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.get_route_dist_checksum_req_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            get_route_dist_checksum_req_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.get_route_dist_checksum_req_t";
+            };
+
+            return get_route_dist_checksum_req_t;
+        })();
+
+        protocol.get_route_dist_checksum_rep_t = (function() {
+
+            /**
+             * Properties of a get_route_dist_checksum_rep_t.
+             * @memberof maxwell.protocol
+             * @interface Iget_route_dist_checksum_rep_t
+             * @property {number|null} [checksum] get_route_dist_checksum_rep_t checksum
+             * @property {number|null} [ref] get_route_dist_checksum_rep_t ref
+             */
+
+            /**
+             * Constructs a new get_route_dist_checksum_rep_t.
+             * @memberof maxwell.protocol
+             * @classdesc Represents a get_route_dist_checksum_rep_t.
+             * @implements Iget_route_dist_checksum_rep_t
+             * @constructor
+             * @param {maxwell.protocol.Iget_route_dist_checksum_rep_t=} [properties] Properties to set
+             */
+            function get_route_dist_checksum_rep_t(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * get_route_dist_checksum_rep_t checksum.
+             * @member {number} checksum
+             * @memberof maxwell.protocol.get_route_dist_checksum_rep_t
+             * @instance
+             */
+            get_route_dist_checksum_rep_t.prototype.checksum = 0;
+
+            /**
+             * get_route_dist_checksum_rep_t ref.
+             * @member {number} ref
+             * @memberof maxwell.protocol.get_route_dist_checksum_rep_t
+             * @instance
+             */
+            get_route_dist_checksum_rep_t.prototype.ref = 0;
+
+            /**
+             * Encodes the specified get_route_dist_checksum_rep_t message. Does not implicitly {@link maxwell.protocol.get_route_dist_checksum_rep_t.verify|verify} messages.
+             * @function encode
+             * @memberof maxwell.protocol.get_route_dist_checksum_rep_t
+             * @static
+             * @param {maxwell.protocol.Iget_route_dist_checksum_rep_t} message get_route_dist_checksum_rep_t message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            get_route_dist_checksum_rep_t.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.checksum != null && Object.hasOwnProperty.call(message, "checksum"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.checksum);
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
+                    writer.uint32(/* id 15, wireType 0 =*/120).uint32(message.ref);
+                return writer;
+            };
+
+            /**
+             * Decodes a get_route_dist_checksum_rep_t message from the specified reader or buffer.
+             * @function decode
+             * @memberof maxwell.protocol.get_route_dist_checksum_rep_t
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {maxwell.protocol.get_route_dist_checksum_rep_t} get_route_dist_checksum_rep_t
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            get_route_dist_checksum_rep_t.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.maxwell.protocol.get_route_dist_checksum_rep_t();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.checksum = reader.uint32();
+                            break;
+                        }
+                    case 15: {
+                            message.ref = reader.uint32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Gets the default type url for get_route_dist_checksum_rep_t
+             * @function getTypeUrl
+             * @memberof maxwell.protocol.get_route_dist_checksum_rep_t
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            get_route_dist_checksum_rep_t.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/maxwell.protocol.get_route_dist_checksum_rep_t";
+            };
+
+            return get_route_dist_checksum_rep_t;
+        })();
+
         protocol.pick_frontend_req_t = (function() {
 
             /**
@@ -4236,8 +4662,9 @@ $root.maxwell = (function() {
          * @property {number} NOT_ALLOWED_TO_REGISTER_FRONTEND=100 NOT_ALLOWED_TO_REGISTER_FRONTEND value
          * @property {number} NOT_ALLOWED_TO_REGISTER_BACKEND=101 NOT_ALLOWED_TO_REGISTER_BACKEND value
          * @property {number} NOT_ALLOWED_TO_REGISTER_SERVICE=102 NOT_ALLOWED_TO_REGISTER_SERVICE value
-         * @property {number} FAILED_TO_PICK_FRONTEND=103 FAILED_TO_PICK_FRONTEND value
-         * @property {number} FAILED_TO_LOCATE_TOPIC=104 FAILED_TO_LOCATE_TOPIC value
+         * @property {number} FAILED_TO_SET_ROUTES=103 FAILED_TO_SET_ROUTES value
+         * @property {number} FAILED_TO_PICK_FRONTEND=104 FAILED_TO_PICK_FRONTEND value
+         * @property {number} FAILED_TO_LOCATE_TOPIC=105 FAILED_TO_LOCATE_TOPIC value
          * @property {number} MASTER_ERROR=199 MASTER_ERROR value
          * @property {number} FAILED_TO_REQUEST_SERVICE=200 FAILED_TO_REQUEST_SERVICE value
          * @property {number} FAILED_TO_REQUEST_BACKEND=201 FAILED_TO_REQUEST_BACKEND value
@@ -4257,8 +4684,9 @@ $root.maxwell = (function() {
             values[valuesById[100] = "NOT_ALLOWED_TO_REGISTER_FRONTEND"] = 100;
             values[valuesById[101] = "NOT_ALLOWED_TO_REGISTER_BACKEND"] = 101;
             values[valuesById[102] = "NOT_ALLOWED_TO_REGISTER_SERVICE"] = 102;
-            values[valuesById[103] = "FAILED_TO_PICK_FRONTEND"] = 103;
-            values[valuesById[104] = "FAILED_TO_LOCATE_TOPIC"] = 104;
+            values[valuesById[103] = "FAILED_TO_SET_ROUTES"] = 103;
+            values[valuesById[104] = "FAILED_TO_PICK_FRONTEND"] = 104;
+            values[valuesById[105] = "FAILED_TO_LOCATE_TOPIC"] = 105;
             values[valuesById[199] = "MASTER_ERROR"] = 199;
             values[valuesById[200] = "FAILED_TO_REQUEST_SERVICE"] = 200;
             values[valuesById[201] = "FAILED_TO_REQUEST_BACKEND"] = 201;

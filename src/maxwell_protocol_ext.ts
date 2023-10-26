@@ -24,6 +24,18 @@ export function encode_msg(msg: any): Uint8Array {
     case msg_types.get_routes_req_t:
       writer.uint32(75);
       return msg_types.get_routes_req_t.encode(msg, writer).finish();
+    case msg_types.get_route_dist_checksum_rep_t:
+      writer.uint32(80);
+      return msg_types.get_route_dist_checksum_rep_t.encode(msg, writer).finish();
+    case msg_types.get_route_dist_checksum_req_t:
+      writer.uint32(79);
+      return msg_types.get_route_dist_checksum_req_t.encode(msg, writer).finish();
+    case msg_types.get_topic_dist_checksum_rep_t:
+      writer.uint32(78);
+      return msg_types.get_topic_dist_checksum_rep_t.encode(msg, writer).finish();
+    case msg_types.get_topic_dist_checksum_req_t:
+      writer.uint32(77);
+      return msg_types.get_topic_dist_checksum_req_t.encode(msg, writer).finish();
     case msg_types.locate_topic_rep_t:
       writer.uint32(86);
       return msg_types.locate_topic_rep_t.encode(msg, writer).finish();
@@ -123,6 +135,14 @@ export function decode_msg(msg: ArrayBuffer): any {
       return msg_types.get_routes_rep_t.decode(reader);
     case 75:
       return msg_types.get_routes_req_t.decode(reader);
+    case 80:
+      return msg_types.get_route_dist_checksum_rep_t.decode(reader);
+    case 79:
+      return msg_types.get_route_dist_checksum_req_t.decode(reader);
+    case 78:
+      return msg_types.get_topic_dist_checksum_rep_t.decode(reader);
+    case 77:
+      return msg_types.get_topic_dist_checksum_req_t.decode(reader);
     case 86:
       return msg_types.locate_topic_rep_t.decode(reader);
     case 85:
