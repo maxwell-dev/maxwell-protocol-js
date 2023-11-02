@@ -1,1 +1,1 @@
-# maxwell-protocol-js
+# maxwell-protocol
