@@ -866,6 +866,9 @@ export namespace maxwell {
         /** Properties of a register_frontend_req_t. */
         interface Iregister_frontend_req_t {
 
+            /** register_frontend_req_t id */
+            id?: (string|null);
+
             /** register_frontend_req_t httpPort */
             httpPort?: (number|null);
 
@@ -881,6 +884,9 @@ export namespace maxwell {
              * @param [properties] Properties to set
              */
             constructor(properties?: maxwell.protocol.Iregister_frontend_req_t);
+
+            /** register_frontend_req_t id. */
+            public id: string;
 
             /** register_frontend_req_t httpPort. */
             public httpPort: number;
@@ -962,6 +968,9 @@ export namespace maxwell {
         /** Properties of a register_backend_req_t. */
         interface Iregister_backend_req_t {
 
+            /** register_backend_req_t id */
+            id?: (string|null);
+
             /** register_backend_req_t httpPort */
             httpPort?: (number|null);
 
@@ -977,6 +986,9 @@ export namespace maxwell {
              * @param [properties] Properties to set
              */
             constructor(properties?: maxwell.protocol.Iregister_backend_req_t);
+
+            /** register_backend_req_t id. */
+            public id: string;
 
             /** register_backend_req_t httpPort. */
             public httpPort: number;
@@ -1058,6 +1070,9 @@ export namespace maxwell {
         /** Properties of a register_service_req_t. */
         interface Iregister_service_req_t {
 
+            /** register_service_req_t id */
+            id?: (string|null);
+
             /** register_service_req_t httpPort */
             httpPort?: (number|null);
 
@@ -1073,6 +1088,9 @@ export namespace maxwell {
              * @param [properties] Properties to set
              */
             constructor(properties?: maxwell.protocol.Iregister_service_req_t);
+
+            /** register_service_req_t id. */
+            public id: string;
 
             /** register_service_req_t httpPort. */
             public httpPort: number;
@@ -1154,8 +1172,32 @@ export namespace maxwell {
         /** Properties of a set_routes_req_t. */
         interface Iset_routes_req_t {
 
-            /** set_routes_req_t paths */
-            paths?: (string[]|null);
+            /** set_routes_req_t wsPaths */
+            wsPaths?: (string[]|null);
+
+            /** set_routes_req_t getPaths */
+            getPaths?: (string[]|null);
+
+            /** set_routes_req_t postPaths */
+            postPaths?: (string[]|null);
+
+            /** set_routes_req_t putPaths */
+            putPaths?: (string[]|null);
+
+            /** set_routes_req_t patchPaths */
+            patchPaths?: (string[]|null);
+
+            /** set_routes_req_t deletePaths */
+            deletePaths?: (string[]|null);
+
+            /** set_routes_req_t headPaths */
+            headPaths?: (string[]|null);
+
+            /** set_routes_req_t optionsPaths */
+            optionsPaths?: (string[]|null);
+
+            /** set_routes_req_t tracePaths */
+            tracePaths?: (string[]|null);
 
             /** set_routes_req_t ref */
             ref?: (number|null);
@@ -1170,8 +1212,32 @@ export namespace maxwell {
              */
             constructor(properties?: maxwell.protocol.Iset_routes_req_t);
 
-            /** set_routes_req_t paths. */
-            public paths: string[];
+            /** set_routes_req_t wsPaths. */
+            public wsPaths: string[];
+
+            /** set_routes_req_t getPaths. */
+            public getPaths: string[];
+
+            /** set_routes_req_t postPaths. */
+            public postPaths: string[];
+
+            /** set_routes_req_t putPaths. */
+            public putPaths: string[];
+
+            /** set_routes_req_t patchPaths. */
+            public patchPaths: string[];
+
+            /** set_routes_req_t deletePaths. */
+            public deletePaths: string[];
+
+            /** set_routes_req_t headPaths. */
+            public headPaths: string[];
+
+            /** set_routes_req_t optionsPaths. */
+            public optionsPaths: string[];
+
+            /** set_routes_req_t tracePaths. */
+            public tracePaths: string[];
 
             /** set_routes_req_t ref. */
             public ref: number;
@@ -1295,8 +1361,32 @@ export namespace maxwell {
         /** Properties of a get_routes_rep_t. */
         interface Iget_routes_rep_t {
 
-            /** get_routes_rep_t routeGroups */
-            routeGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+            /** get_routes_rep_t wsRouteGroups */
+            wsRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t getRouteGroups */
+            getRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t postRouteGroups */
+            postRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t putRouteGroups */
+            putRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t patchRouteGroups */
+            patchRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t deleteRouteGroups */
+            deleteRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t headRouteGroups */
+            headRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t optionsRouteGroups */
+            optionsRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
+
+            /** get_routes_rep_t traceRouteGroups */
+            traceRouteGroups?: (maxwell.protocol.Iroute_group_t[]|null);
 
             /** get_routes_rep_t ref */
             ref?: (number|null);
@@ -1311,8 +1401,32 @@ export namespace maxwell {
              */
             constructor(properties?: maxwell.protocol.Iget_routes_rep_t);
 
-            /** get_routes_rep_t routeGroups. */
-            public routeGroups: maxwell.protocol.Iroute_group_t[];
+            /** get_routes_rep_t wsRouteGroups. */
+            public wsRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t getRouteGroups. */
+            public getRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t postRouteGroups. */
+            public postRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t putRouteGroups. */
+            public putRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t patchRouteGroups. */
+            public patchRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t deleteRouteGroups. */
+            public deleteRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t headRouteGroups. */
+            public headRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t optionsRouteGroups. */
+            public optionsRouteGroups: maxwell.protocol.Iroute_group_t[];
+
+            /** get_routes_rep_t traceRouteGroups. */
+            public traceRouteGroups: maxwell.protocol.Iroute_group_t[];
 
             /** get_routes_rep_t ref. */
             public ref: number;
