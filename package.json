@@ -1,6 +1,6 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Maxwell protocol implementation for js/ts.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "clean": "bin/clean_protocol_code.sh",
     "test": "npx jest --coverage",
     "format": "biome format --write --verbose",
-    "lint": "biome lint ./src --verbose"
+    "lint": "biome lint --verbose"
   },
   "dependencies": {
     "protobufjs": "~7.4.0"
