@@ -1044,7 +1044,7 @@ $root.maxwell = (function() {
              * @memberof maxwell.protocol
              * @interface Ipull_req_t
              * @property {string|null} [topic] pull_req_t topic
-             * @property {bigint|null} [offset] pull_req_t offset
+             * @property {number|null} [offset] pull_req_t offset
              * @property {number|null} [limit] pull_req_t limit
              * @property {number|null} [conn0Ref] pull_req_t conn0Ref
              * @property {number|null} [conn1Ref] pull_req_t conn1Ref
@@ -1076,11 +1076,11 @@ $root.maxwell = (function() {
 
             /**
              * pull_req_t offset.
-             * @member {bigint} offset
+             * @member {number} offset
              * @memberof maxwell.protocol.pull_req_t
              * @instance
              */
-            pull_req_t.prototype.offset =  0n;
+            pull_req_t.prototype.offset = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
              * pull_req_t limit.
@@ -4619,9 +4619,9 @@ $root.maxwell = (function() {
              * Properties of a msg_t.
              * @memberof maxwell.protocol
              * @interface Imsg_t
-             * @property {bigint|null} [offset] msg_t offset
+             * @property {number|null} [offset] msg_t offset
              * @property {Uint8Array|null} [value] msg_t value
-             * @property {bigint|null} [timestamp] msg_t timestamp
+             * @property {number|null} [timestamp] msg_t timestamp
              */
 
             /**
@@ -4641,11 +4641,11 @@ $root.maxwell = (function() {
 
             /**
              * msg_t offset.
-             * @member {bigint} offset
+             * @member {number} offset
              * @memberof maxwell.protocol.msg_t
              * @instance
              */
-            msg_t.prototype.offset =  0n;
+            msg_t.prototype.offset = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
             /**
              * msg_t value.
@@ -4657,11 +4657,11 @@ $root.maxwell = (function() {
 
             /**
              * msg_t timestamp.
-             * @member {bigint} timestamp
+             * @member {number} timestamp
              * @memberof maxwell.protocol.msg_t
              * @instance
              */
-            msg_t.prototype.timestamp =  0n;
+            msg_t.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
             /**
              * Encodes the specified msg_t message. Does not implicitly {@link maxwell.protocol.msg_t.verify|verify} messages.
