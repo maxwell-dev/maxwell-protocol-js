@@ -1,6 +1,6 @@
 {
   "name": "maxwell-protocol",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Maxwell protocol implementation for js/ts.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@babel/preset-env": "~7.25.4",
     "@babel/preset-typescript": "~7.24.7",
-    "@types/node": "~22.5.0",
+    "@types/node": "~22.5.4",
     "babel-jest": "~29.7.0",
     "bufferutil": "~4.0.8",
     "canvas": "~2.11.2",
